@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Autentificare</title>
+    <title>Inregistrare</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -38,7 +38,7 @@
                 </div>
                 <div class="col-2 col-lg-2">
                     <div class="logo-area">
-                        <a href="#"><img src="assets/img/logo-top.png" alt=""></a>
+                        <a href="#"><img src="assets/img/logo_3.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-4 col-lg-8 d-none d-lg-block">
@@ -60,80 +60,30 @@
     <!--welcome area start-->
     <div class="welcome-area wow fadeInUp" id="home">
         <div class="row">
-                <div class="col-12 col-md-5">
-                    <div class="about-mid-img">
-                        <img src="assets/img/about-left.png" alt="">
-                    </div>
-                </div>
-                <div class=" chestionar col-12 col-md-7 align-self-center" ng-app="">
-                <form name="myForm">
-                    
-                    <div class="about-mid-text">
-                        <h1>Ne bucurăm să te avem alături de noi, {{name}}. </h1>
-                   
-                    </div>
-                    <div class="space-30"></div>
-                   
-                        <p>Haide sa ne cunoastem</p>
-                        <p>Prenume: <input type="text" ng-model="name" placeholder="Enter name here" name="name" required><span ng-show="myForm.name.$touched && myForm.name.$invalid"> Prenumele este obligatoriu.</span></p>
-                        <p>Nume: <input type="text" ng-model="surname" placeholder="Enter name here" name="surname" required><span ng-show="myForm.surname.$touched && myForm.surname.$invalid"> Numele este obligatoriu.</span></p>
-                        <p>User: <input type="text" ng-model="surname" placeholder="Enter name here" name="surname" required><span ng-show="myForm.surname.$touched && myForm.surname.$invalid"> Numele este obligatoriu.</span></p>
-                        <p>Parolă: <input type="password" placeholder="Enter name here"  required><span ng-show="myForm.surname.$touched && myForm.surname.$invalid"> Numele este obligatoriu.</span></p>
-
-                        <p>Email: <input type="email" ng-model="email" placeholder="Enter email here" name="email" required><span ng-show="myForm.email.$touched && myForm.email.$invalid"> Emailul este obligatoriu.</span></p>
-                        <p>Numar telefon: <input type="number" ng-model="tel" placeholder="Enter number here"  name="tel" required><span ng-show="myForm.tel.$touched && myForm.tel.$invalid"> Numarul este obligatoriu.</span></p>
-                        <p>Adresa: <input type="text" placeholder="Enter address here"></p>
-                        <p>La ce universitate studiezi, {{name}}?<br/> 
-                            <input type="checkbox" ng-model="uaic"> Uiversitatea "Alexandru Ioan Cuza" <br/>
-                            <input type="checkbox" ng-model="asachi"> Universitatea Tehnica "Gheorghe Asachi"<br/>
-                            <input type="checkbox" ng-model="umf"> Universitatea de Medicină şi Farmacie „Gr. T. Popa” <br/>
-                            <input type="checkbox" ng-model="msrte"> Universitatea de Arte „George Enescu” <br/>
-                            <input type="checkbox" ng-model="agricol"> Universitatea de Ştiinţe Agricole şi Medicină Veterinară „Ion Ionescu de la Brad” <br/>
-                            <input type="checkbox" ng-model="petre"> Universitatea „Petre Andrei” <br/></p>                    
-                        <p ng-show="uaic"> 
-                            Si in cadrul carei facultati din UAIC?<br/>
-                            <select ng-model="myVar">
-                            <option value="">Selecteaza aici
-                            <option value="dogs">Biologie
-                            <option value="tuts">Chimie
-                            <option value="cars">Drept
-                            <option value="cars">Economie şi Administrarea Afacerilor
-                            <option value="cars">Educaţie Fizică şi Sport
-                            <option value="cars">Filosofie şi Ştiinţe Social – Politice
-                            <option value="cars">Fizică
-                            <option value="cars">Geografie şi Geologie
-                            <option value="cars">Informatică
-                            <option value="cars">Istorie
-                            <option value="cars">Litere
-                            <option value="cars">Matematică
-                            <option value="cars">Psihologie şi Ştiinţe ale Educaţiei
-                            <option value="cars">Teologie Ortodoxă
-                            <option value="cars">Centrul de Studii Europene
-                            </select>
-                        </p>
-                        <p ng-show="asachi"> 
-                            Si in cadrul carei facultati din ASACHI?<br/>
-                          <select ng-model="myVar">
-                            <option value="">Selecteaza aici
-                            <option value="dogs">Arhitectură
-                            <option value="tuts">Automatică şi Calculatoare
-                            <option value="cars">Construcţii şi Instalaţii
-                            <option value="cars">Construcţii de Maşini şi Management Industrial
-                            <option value="cars">Electronică, Telecomunicaţii şi Tehnologia Informaţiei
-                            <option value="cars">Hidrotehnică
-                            <option value="cars">Geodezie şi Ingineria Mediului
-                            <option value="cars">Inginerie Chimică şi Protecţia Mediului
-                            <option value="cars">Inginerie Electrică
-                            <option value="cars">Energetică şi Informatică Aplicată
-                            <option value="cars">Mecanică, Ştiinţa şi Ingineria Materialelor
-                            <option value="cars">Textile Pielărie şi Management Industrial
-                          </select>
-                        </p>
-                        <p>Varsta: <input type="range" ng-model="varsta" placeholder="Enter name here" name="name" required><span ng-show="myForm.name.$touched && myForm.name.$invalid"> Prenumele este obligatoriu.</span></p>
-                    <a href="#" class="gradient-btn v2 about-btn"> <i class="fa fa-send-o"></i> Trimite</a>
-                </form>
+            <div class="col-12 col-md-4">
+                <div class="about-mid-img">
+                    <img src="assets/img/man1.png" alt="">
                 </div>
             </div>
+            <div class=" chestionar col-12 col-md-7 align-self-center" ng-app="">
+                <form name="myForm">          
+                    <div class="about-mid-text">
+                        <h1>Ne bucurăm să te avem alături de noi {{name}} </h1>
+                    </div>
+                    <p>Haide sa ne cunoastem</p>
+                    <p><input type="text" ng-model="name" placeholder="Nume" name="name" id="nume" required><span ng-show="myForm.name.$touched && myForm.name.$invalid"> Numele este obligatoriu.</span></p>
+                    <p><input type="text" ng-model="uni" placeholder="Universitate" name="" id="univ"  required><span ng-show="myForm.surname.$touched && myForm.surname.$invalid"> Universitatea este obligatorie.</span></p>
+                    <p><input type="text" ng-model="facultate" placeholder="Facultate" name="" id="fac"  required><span ng-show="myForm.surname.$touched && myForm.surname.$invalid"> Facultatea este obligatorie.</span></p>
+                    <p><input type="text" ng-model="tel" placeholder="Telefon" name="" id="tel"  required><span ng-show="myForm.surname.$touched && myForm.surname.$invalid"> Telefonul este obligatoriu.</span></p>
+                    <p><input type="text" ng-model="email" placeholder="Email" name="" id="email"  required><span ng-show="myForm.surname.$touched && myForm.surname.$invalid"> Emailul este obligatoriu.</span></p>
+                    <p><input type="password" placeholder="Parola" id="parola"   required><span ng-show="myForm.surname.$touched && myForm.surname.$invalid"> Parola este obligatorie.</span></p>
+                    <div class="space-10"></div>
+                    <a href="#" class="gradient-btn v2 about-btn" id="trimite"> <i class="fa fa-send-o"></i> Trimite</a>
+                    <div id="displayData"></div>
+                    <div class="space-90"></div>
+                </form>
+            </div>
+        </div>
     </div>
     <!--welcome area end-->
 
@@ -144,7 +94,7 @@
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-footer">
                         <div class="logo-area footer">
-                            <a href="#"><img src="assets/img/logo-top.png" alt=""></a>
+                            <a href="#"><img src="assets/img/logo_3.png" alt=""></a>
                         </div>
                         <div class="space-20"></div>
                         <p>Acest proiect este realizat pentru materia PSBD(Programarea sistemelor de baze de date) în cadrul facultății de Automatică și calculatoare Iași. </p>
@@ -170,32 +120,54 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div>
     </div>
     <script>
-        function cerere(){
-            var xhttp = new XMLHttpRequest();
-            let id = document.getElementById("in_data").value;
-            let url = `https://apex.oracle.com/pls/apex/psbd_ac4/hr/employees/${id}`;
+        document.getElementById("trimite").onclick = function() {myFunction()};
+        function myFunction() {
+           
+            let url = `https://apex.oracle.com/pls/apex/psbd_ac4/psbd/student/`;
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", url, true);
 
-            xhttp.open("GET", url, true);
-            xhttp.send();
-            xhttp.onreadystatechange = function() {
-              if (this.readyState == 4 && this.status == 200) {
-                let jsonData = JSON.parse(this.responseText);
-                let nume = jsonData.ename;
-                let slujba = jsonData.job;
-                let manager = jsonData.mgr;
-                let salar = jsonData.sal;
-                document.getElementById("displayData_n").innerHTML = nume;
-                document.getElementById("displayData_sl").innerHTML = slujba;
-                document.getElementById("displayData_m").innerHTML = manager;
-                document.getElementById("displayData_s").innerHTML = salar;
-              }
-            };
+            xhr.setRequestHeader("Content-Type", "application/json");   //Send the proper header information along with the request
+
+            xhr.onreadystatechange = function() { // Call a function when the state changes.
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    document.getElementById("displayData").innerHTML = "Success POST";
+                }
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 555) {
+                    document.getElementById("displayData").innerHTML = "User alredy exists";
+                }           
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 550) {
+                    document.getElementById("displayData").innerHTML = "Data is not correct";
+                }
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 400) {
+                    document.getElementById("displayData").innerHTML = "Other error";
+                }
+            }
+
+            let nume = document.getElementById("nume").value;
+            let nume_univ = document.getElementById("univ").value;
+            let nume_fac = document.getElementById("fac").value;
+            let telefon = document.getElementById("tel").value;
+            let email = document.getElementById("email").value;
+            let parola = document.getElementById("parola").value;
+            let body = '{"nume":' + '"' + nume + '"' + 
+                        ',"n_universitate":' + '"' + nume_univ + '"' + 
+                        ',"n_facultate":' + '"' + nume_fac + '"' +
+                        ',"telefon":' + '"' + telefon + '"' +
+                        ',"email":' + '"' + email + '"' +
+                        ',"parola":' + '"' + parola + '"' +
+                        '}';
+            document.getElementById("displayData").innerHTML=body;
+            console.log(body);
+            xhr.send(body); 
+
         }
+        
     </script>
     <!-- jquery 2.2.4 js-->
     <script src="assets/js/jquery-2.2.4.min.js"></script>
     <!-- popper js-->
-    <script src="assets/js/popper.js"></script>
+    <!-- <script src="assets/js/popper.js"></script> -->
     <!-- carousel js-->
     <script src="assets/js/owl.carousel.min.js"></script>
     <!-- wow js-->

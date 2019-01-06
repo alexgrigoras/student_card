@@ -60,7 +60,7 @@ css list:
 @import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,800');
 
 body{
-	background: #062489;
+  background-image: radial-gradient(at top,#2e2679,#101659);
 	font-family: 'Montserrat', sans-serif;
 	font-size: 14px;
 	color: #cbe5ff;
@@ -164,9 +164,9 @@ a.single-about,
 =====================*/
 
 .logo-area img {
-  width: 100px;
+  
   margin-top: 7px;
-  height: 30px;
+  height: 35px;
 }
 
 .header-area {
@@ -178,7 +178,7 @@ a.single-about,
 
 .header-area.header-absolate.skrollable.skrollable-after {
   padding-top: 15px;
-  background: #000D47;
+  background: #6a9fdc;
   padding-bottom: 15px;
 }
 
@@ -205,7 +205,7 @@ a.single-about,
   left: 0;
   top: 70px;
   z-index: 999;
-  background: #001763;
+  background: #2d2578;
   border-radius: 5px;
   visibility: hidden;;
   opacity: 1;
@@ -220,7 +220,7 @@ a.single-about,
 }
 
 .main-menu li ul li a:hover {
-  background: #062489;
+  background: #2d2578;
   padding-left: 15px;
 }
 
@@ -1775,10 +1775,15 @@ a.gradient-btn:hover:after{
 .document-flag img, 
 .single-team-img img,
 .welcome-img img{
-  height: 100%;
-  width: 100%;
+  padding-top: 10px;
+  height: 90%;
+  width: 90%;
 }
-
+.card_bg{
+  padding: 20px;;
+  border-radius: 10px;
+  background-image: linear-gradient(to right,rgba(200,200,200,0.1),rgba(255,255,255,0.03));
+}
 ::-webkit-input-placeholder{color:#fff}
 :-ms-input-placeholder{color:#fff}
 ::-ms-input-placeholder{color:#fff}

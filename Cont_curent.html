@@ -8,6 +8,7 @@
 
     <!-- carousel CSS -->
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <!--header icon CSS -->
     <link rel="icon" href="assets/img/fabicon.png">
     <!-- animations CSS -->
@@ -26,9 +27,13 @@
     <link rel="stylesheet" href="style.css">
     <!-- responsive CSS -->
     <link rel="stylesheet" href="assets/css/responsive.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="./Pie Chart/Chart.bundle.js"></script>
+    <script src="./Pie Chart/utils.js"></script>
   </head>
-  <body>
+  <body onload="basic();dateCard();getTranz()">
     <!--header area start-->
     <div class="header-area wow fadeInDown header-absolate" id="nav" data-0="position:fixed;" data-top-top="position:fixed;top:0;" data-edge-strategy="set">
         <div class="container">
@@ -38,16 +43,16 @@
                 </div>
                 <div class="col-4 col-lg-2">
                     <div class="logo-area">
-                        <a href="#"><img src="assets/img/logo-top.png" alt=""></a>
+                        <a href="#"><img src="assets/img/logo_3.png" alt=""></a>
                     </div>
                 </div>
-                <div class="col-4 col-lg-10 d-none d-lg-block">
+                <div class="col-4 col-lg-7 d-none d-lg-block">
                     <div class="main-menu text-center">
                         <nav>
                             <ul id="slick-nav">
-                                <li><a class="scroll" href="#acasa">Acasă</a></li>
+                                <li><a class="scroll" href="./index3.html">Acasă</a></li>
                                 <li><a class="scroll" href="#cont">Cont</a></li>
-                                <li><a class="scroll" href="#pt">Plăți & transferuri</a></li>
+                                <li><a class="scroll" href="#plati_transf">Plăți & transferuri</a></li>
                                 <li><a class="scroll" href="#profil">Profil & setări</a></li>
                                 <li><a class="scroll" href="#roadmap">Ajutor</a>
                                     <ul>
@@ -60,51 +65,319 @@
                         </nav>
                     </div>
                 </div>
-                
+                <div class="col-4 col-lg-3 d-none d-lg-block">
+                    <div class="text-right">
+                       
+                            <strong id="utilizator">user</strong>
+                        
+                        <span id="iesi">
+                            | Log out
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <!--header area end-->
-
-    <!--Logare area-->
-    <div class="welcome-area wow fadeInUp" id="home">
-        <div id="particles-js"></div>
+    
+    <section class="wow fadeInUp" id="cont">
         <div class="container">
-            <div class="row">
-                <div class="col-12 col-md-6 align-self-center">
-                    <div class="welcome-right">
-                        <div class="welcome-text">
-                            <h1>Log in</h1>
-                            <input type="text" name="username" value="Username"><br/><br/>
-                            <input type="text" name="parola" value="Parolă"><br/>
-                            <a href="#" class="">* Ai uitat parola?</a>
+            <div class="space-100"></div>
+            <div class="row border-bottom text-center">
+                <div class="col-md-4 ftco-animate">
+                    <div class="row text-center">
+                        <div class="col-md-12 ftco-animate">
+                            <p>Economii</p>
+                            <h2 style="color:#D6FFBD;">LEI 54.67</h2>
                         </div>
-                        <div class="welcome-btn">
-                            <a href="#" class="gradient-btn v2 mr-20">Autentificare</a>
+                    </div>
+                    <div class="row text-center">
+                        <div class="col-md-12 ftco-animate">
+                            <p>Cheltuit</p>
+                            <h2 style="color:#FFBDD8;">LEI 144.67</h2>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6">
-                    <div class="welcome-img">
-                        <img src="assets/img/welcome-img.png" alt="">
+                <div class="col-md-4">
+                    <strong>Cont curent </strong><br>LEI 
+                    <h1 style="font-size: 50px;" id="suma">0</h1>
+                    <div class="space-20"></div>
+                    Numarul contului:<br>
+                    <h3 style="font-size: 20px;" id="numar"><strong>---- ---- ---- ----</strong></h3>
+
+                 </div>
+                 <div class="col-md-3 text-center">
+                    <div class="row ">
+                        <div class="col-md-12 text-center">
+                            ID Student<br>
+                            <h3 id="id_student">id student</h3>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-12 text-center">
+                            Stare<br>
+                            <h3 id="stare_test">0</h3>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!--Logare area-->
+             
+        <div class="container">
+        <div class="space-60"></div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div id="tranzactii" class="text-center"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row ">
+                        <div class="col-md-6">
+                            <div class="row ">
+                                 <div class="col-md-6 text-left">
+                                    <p>Cumpăr</p>
+                                 </div>
+                                 <div class="col-md-6 text-right">
+                                    <p style="color: rgba(255,255,255,0.3);">Ajutor!</p>
+                                 </div>
+                            </div>
+                            <div class="card_bg">
+                                <div class="row ">
+                                    <div class="col-md-6 text-center">
+                                        <div id="c_meniu">
+                                            <h2><i class="fas fa-utensils"></i></h2>
+                                            <p>Meniu <br>RON <strong id="c_meniu_pret">45</strong></p>
+                                        </div>
+                                     </div>
+                                     <div class="col-md-6 text-center">
+                                        <div id="c_analize">
+                                            <h2><i class="fas fa-notes-medical"></i></h2>
+                                            <p>Analize <br>RON <strong id="c_analize_pret">150</strong></p>
+                                        </div>
+                                     </div>
+                                 </div>
+                                 <div class="row ">
+                                     <div class="col-md-6 text-center">
+                                        <div id="c_autobuz">
+                                            <h2> <i class="fas fa-bus-alt"></i></h2>
+                                            <p>Autobuz <br>RON <strong id="c_autobuz_pret">2.5</strong></p>
+                                        </div>
+                                     </div>
+                                     <div class="col-md-6 text-center">
+                                        <div id="c_tshirt">
+                                            <h2><i class="fas fa-tshirt"></i></h2>
+                                            <p>Haine <br>RON <strong id="c_tshirt_pret">127</strong></p>
+                                        </div>
+                                     </div>
+                                 </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="row ">
+                                 <div class="col-md-6 text-left">
+                                    <p>Vând</p>
+                                 </div>
+                                 <div class="col-md-6 text-right">
+                                    <p style="color: rgba(255,255,255,0.3);">Ajutor!</p>
+                                 </div>
+                            </div>
+                            <div class="card_bg">
+                                <div class="row ">
+                                    <div class="col-md-6 text-center">
+                                        <div id="v_mobil">
+                                            <h2><i class="fas fa-mobile"></i></h2>
+                                            <p>Telefon <br>RON <strong id="v_mobil_pret">1500</strong></p>
+                                        </div>
+                                     </div>
+                                     <div class="col-md-6 text-center">
+                                        <div id="v_couch">
+                                            <h2><i class="fas fa-couch"></i></h2>
+                                            <p>Mobilă <br>RON <strong id="v_couch_pret">1700</strong></p>
+                                        </div>
+                                     </div>
+                                 </div>
+                                 <div class="row ">
+                                     <div class="col-md-6 text-center">
+                                        <div id="v_car">
+                                            <h2><i class="fas fa-car"></i></h2>
+                                            <p>Mașină <br>RON <strong id="v_car_pret">16000</strong></p>
+                                        </div>
+                                     </div>
+                                     <div class="col-md-6 text-center">
+                                        <div id="c_laptop">
+                                            <h2><i class="fas fa-laptop"></i></h2>
+                                            <p>Laptop <br>RON <strong id="v_laptop_pret">3280</strong></p>
+                                        </div>
+                                     </div>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="space-40"></div>
+                    <div class="row ">
+                         <div class="col-md-6 text-left">
+                            <p>Abonamente</p>
+                         </div>
+                         <div class="col-md-6 text-right">
+                            <p style="color: rgba(255,255,255,0.3);">Extinde</p>
+                         </div>
+                    </div>
+                    <div class="card_bg">
+                        <div class="row ">
+                                <div class="col-md-4 text-center"  >
+                                    <div id="a_sala">
+                                        <h2><i class="fas fa-dumbbell"></i></h2>RON 
+                                        <strong id="a_sala_pret">127</strong>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 text-left">
+                                    <strong>Sală</strong>
+                                    <p>Abonamentul include fitness și aerobic doar între orele 7Am și 4PM.</p>
+                                 </div>
+                         </div>
+                     </div>
+                     <div class="space-10"></div>
+                     <div class="card_bg">
+                         <div class="row "  >
+                            
+                                <div class="col-md-4 text-center">
+                                    <div id="a_transport">
+                                        <h2><i class="fas fa-bus-alt"></i></h2>RON 
+                                        <strong id="a_transport_pret">10</strong>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 text-left">
+                                    <strong>Transport public</strong>
+                                    <p>Abonamentul este valabil o lună de zile.</p>
+                                 </div>
+                             
+                         </div>
+                    </div>
+                    <div class="space-10"></div>
+                     <div class="card_bg">
+                         <div class="row ">
+                           
+                                <div class="col-md-4 text-center">
+                                    <div  id="a_biblioteca">
+                                        <h2><i class="fas fa-book"></i></h2>RON 
+                                        <strong id="a_biblioteca_pret">25</strong>
+                                    </div>
+                                </div>
+                                <div class="col-md-8 text-left">
+                                    <strong>Bibliotecă</strong>
+                                    <p>Accesul la bibliotecă este 24 din 24.</p>
+                                 </div>
+                            
+                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="space-90"></div>
+    <section class="wow fadeInUp" id="plati_transf">
+        <div class="container">
+            <div class="row justify-content-center mb-5 pb-2">
+              <div class="col-md-7 text-center heading-section ftco-animate">
+                <div class="space-30"></div>
+                <h2 class="mb-3">Cele mai bune oferte</h2>
+                <span class="subheading">Tipuri de card</span>
+              </div>
+            </div>
+            <div class="row">
+            <div class="col-md-3 ftco-animate">
+              <div class="block-7">
+                <div class="text-center">
+                <h2 class="heading">Gratis</h2>
+                <span class="price">$ <span class="number">0</span></span>
+                <span class="excerpt d-block">100% gratis</span><br>
+                <a href="#" class="gradient-btn d-block px-2 py-3 mb-4">Înscrie-te</a>
+                
+                <h3 class="heading-2 mb-4">Bucurăte de beneficii</h3>
+                
+                <ul class="pricing-text">
+                  <li><strong>1 an</strong> Fară taxe</li>
+                  <li><strong>7</strong> Firme partenere</li>
+                  <li><strong>50 GB</strong> Spațiu de stocare</li>
+                  <li>+ Reduceri</li>
+                </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 ftco-animate">
+              <div class="block-7">
+                <div class="text-center">
+                <h2 class="heading">Startup</h2>
+                <span class="price">$ <span class="number">19</span></span>
+                <span class="excerpt d-block">Membru Bronz</span><br>
+                <a href="#" class="gradient-btn d-block px-3 py-3 mb-4">Înscrie-te</a>
+                
+                <h3 class="heading-2 mb-4">Enjoy All The Features</h3>
+                
+                <ul class="pricing-text">
+                  <li><strong>2 ani</strong> Fară taxe</li>
+                  <li><strong>27</strong> Firme partenere</li>
+                  <li><strong>100 GB</strong> Spațiu de stocare</li>
+                  <li>+ Reduceri</li>
+                </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 ftco-animate">
+              <div class="block-7">
+                <div class="text-center">
+                <h2 class="heading">Premium</h2>
+                <span class="price">$ <span class="number">49</span></span>
+                <span class="excerpt d-block">Membru Silver</span><br>
+                <a href="#" class="gradient-btn d-block px-3 py-3 mb-4">Înscrie-te</a>
+                
+                <h3 class="heading-2 mb-4">Enjoy All The Features</h3>
+                
+                <ul class="pricing-text">
+                  <li><strong>2 ani</strong> Fară taxe</li>
+                  <li><strong>57</strong> Firme partenere</li>
+                  <li><strong>500 GB</strong> Spațiu de stocare</li>
+                  <li>+ Reduceri</li>
+                </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3 ftco-animate">
+              <div class="block-7">
+                <div class="text-center">
+                <h2 class="heading">Pro</h2>
+                <span class="price"><sup>$</sup> <span class="number">99</span></span>
+                <span class="excerpt d-block">Membru Gold</span><br>
+                <a href="#" class="gradient-btn d-block px-3 py-3 mb-4">Înscrie-te</a>
+                
+                <h3 class="heading-2 mb-4">Enjoy All The Features</h3>
+                
+                <ul class="pricing-text">
+                  <li><strong>2 ani</strong> Fară taxe</li>
+                  <li><strong>57</strong> Firme partenere</li>
+                  <li><strong>1 TB</strong> Spațiu de stocare</li>
+                  <li>+ Reduceri</li>
+                </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <div class="space-40"></div>
+<hr style="border-color: rgba(90,83,152,0.5);">
 
-    <!--footer area start-->
+  
+ <!--footer area start-->
     <div class="footera-area section-padding wow fadeInDown">
         <div class="container">
             <div class="row">
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-footer">
                         <div class="logo-area footer">
-                            <a href="#"><img src="assets/img/logo-top.png" alt=""></a>
+                            <a href="#"><img src="assets/img/logo_3.png" alt=""></a>
                         </div>
                         <div class="space-20"></div>
-                        <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. </p>
+                        <p>Acest proiect este realizat pentru materia PSBD(Programarea sistemelor de baze de date) în cadrul facultății de Automatică și calculatoare Iași. </p>
                         <div class="space-10"></div>
                         <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
@@ -112,63 +385,637 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 </p>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-2">
-                    <div class="single-footer">
-                        <ul>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Token Sale</a></li>
-                            <li><a href="#">Roadmap</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-6 col-lg-2">
-                    <div class="single-footer">
-                        <ul>
-                            <li><a href="#">White Paper</a></li>
-                            <li><a href="#">Team</a></li>
-                            <li><a href="#">APP</a></li>
-                            <li><a href="#">FAQ</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-12 col-sm-6 col-lg-4">
-                    <div class="single-footer">
-                        <p>Subscribe to our Newsletter</p>
-                        <div class="space-20"></div>
-                        <div class="footer-form">
-                            <form action="#">
-                                <input type="email" placeholder="Email Address">
-                                <a href="" class="gradient-btn subscribe">GO</a>
-                            </form>
-                        </div>
-                    </div>
-                </div>
+                
             </div>
         </div>
     </div>
-    <script>
-        function cerere(){
+<script>
+        document.getElementById("iesi").onclick = function() {iesi()};
+        document.getElementById("utilizator").innerHTML="<i class='far fa-user'></i> "+sessionStorage.getItem("lastname");
+        
+        function basic(){
+            document.getElementById("stare_test").innerHTML=sessionStorage.getItem("lastname");
+
+        }
+        function iesi(){
+            window.location.href='./autentificare.html';
+        }
+        function dateCard() {
             var xhttp = new XMLHttpRequest();
-            let id = document.getElementById("in_data").value;
-            let url = `https://apex.oracle.com/pls/apex/psbd_ac4/hr/employees/${id}`;
+            let nume = sessionStorage.getItem("lastname");
+            let url = `https://apex.oracle.com/pls/apex/psbd_ac4/psbd/card/${nume}`;
 
             xhttp.open("GET", url, true);
             xhttp.send();
             xhttp.onreadystatechange = function() {
               if (this.readyState == 4 && this.status == 200) {
-                let jsonData = JSON.parse(this.responseText);
-                let nume = jsonData.ename;
-                let slujba = jsonData.job;
-                let manager = jsonData.mgr;
-                let salar = jsonData.sal;
-                document.getElementById("displayData_n").innerHTML = nume;
-                document.getElementById("displayData_sl").innerHTML = slujba;
-                document.getElementById("displayData_m").innerHTML = manager;
-                document.getElementById("displayData_s").innerHTML = salar;
+                //let jsonData = JSON.parse(this.response);
+                let data = this.response;
+                var obj = JSON.parse(data);
+                document.getElementById("suma").innerHTML = obj.items[0].suma;
+                document.getElementById("numar").innerHTML =  obj.items[0].numar_card;
+                document.getElementById("id_student").innerHTML =  obj.items[0].id_student;
               }
-            };
+            }
         }
+        function getTranz() {
+            var xhttp = new XMLHttpRequest();
+            let nume = sessionStorage.getItem("lastname");
+            let url = `https://apex.oracle.com/pls/apex/psbd_ac4/psbd/tranzactie/${nume}`;
+            xhttp.open("GET", url, true);
+            xhttp.send();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                //let jsonData = JSON.parse(this.response);
+                let data = this.response;
+                var obj = JSON.parse(data);
+                let t="";
+                if(obj.hasMore==true)
+                {
+                    for (i = 0; i < obj.count; i++) {
+                        if(obj.items[i].tip_tranzactie=="V"){
+                            t=t+"<div class='row'><div class='col-md-1'><h3 style='color:#D6FFBD;'>"+obj.items[i].tip_tranzactie+"</h3></div><div class='col-md-7'><strong>Locație: "+obj.items[i].id_locatie+"</strong><br/>nr: "+obj.items[i].numar_tranzactie+" | "+obj.items[i].data+"</div><div class='col-md-4 text-right'>RON <strong style='color:#D6FFBD;font-size:30px;'>"+obj.items[i].valoare+"</strong></div></div><hr style='border-color: rgba(90,83,152,0.5);margin:5px;'>";
+                        }
+                        else if(obj.items[i].tip_tranzactie=="C"){
+                            t=t+"<div class='row'><div class='col-md-1'><h3 style='color:#FFBDD8;'>"+obj.items[i].tip_tranzactie+"</h3></div><div class='col-md-7'><strong>Locație: "+obj.items[i].id_locatie+"</strong><br/>nr: "+obj.items[i].numar_tranzactie+" | "+obj.items[i].data+"</div><div class='col-md-4 text-right'>RON <strong style='color:#FFBDD8;font-size:30px;'>"+obj.items[i].valoare+"</strong></div></div><hr style='border-color: rgba(90,83,152,0.5);margin:5px;'>";
+                        }
+                        else if(obj.items[i].tip_tranzactie=="A"){
+                            t=t+"<div class='row'><div class='col-md-1'><h3 style='color:#FFEFA1;'>"+obj.items[i].tip_tranzactie+"</h3></div><div class='col-md-7'><strong>Locație: "+obj.items[i].id_locatie+"</strong><br/>nr: "+obj.items[i].numar_tranzactie+" | "+obj.items[i].data+"</div><div class='col-md-4 text-right'>RON <strong style='color:#FFEFA1;font-size:30px;'>"+obj.items[i].valoare+"</strong></div></div><hr style='border-color: rgba(90,83,152,0.5);margin:5px;'>";
+                        }
+                    }
+                    
+                    t=t+"<h1><i class='fas fa-caret-down'></i></h1>";
+                    document.getElementById("tranzactii").innerHTML = t;
+                }
+              }
+            }
+           }
+        document.getElementById("c_meniu").onclick = function() {postTranz0();dateCard();getTranz();};
+        document.getElementById("c_analize").onclick = function() {postTranz1();dateCard();getTranz();};
+        document.getElementById("c_autobuz").onclick = function() {postTranz2();dateCard();getTranz();};
+        document.getElementById("c_tshirt").onclick = function() {postTranz3();dateCard();getTranz();};
+        
+        document.getElementById("v_mobil").onclick = function() {postTranz4();dateCard();getTranz();};
+        document.getElementById("v_couch").onclick = function() {postTranz5();dateCard();getTranz();};
+        document.getElementById("v_car").onclick = function() {postTranz6();dateCard();getTranz();};
+        document.getElementById("v_laptop").onclick = function() {postTranz7();dateCard();getTranz();};
+        
+        document.getElementById("a_sala").onclick = function() {postTranz8();dateCard();getTranz();};
+        document.getElementById("a_transport").onclick = function() {postTranz9();dateCard();getTranz();};
+        document.getElementById("a_biblioteca").onclick = function() {postTranz10();dateCard();getTranz();};       
+        
+        function postTranz0(){
+            let url = `https://apex.oracle.com/pls/apex/psbd_ac4/psbd/tranzactie/`;
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", url, true);
+
+            xhr.setRequestHeader("Content-Type", "application/json");   //Send the proper header information along with the request
+
+            xhr.onreadystatechange = function() { // Call a function when the state changes.
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    document.getElementById("displayData").innerHTML = "Success POST";
+                }
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 555) {
+                    document.getElementById("displayData").innerHTML = "Tranzactia nu e valida";
+                }   
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 550) {
+                    document.getElementById("displayData").innerHTML = "Suma insuficienta";
+                }               
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 400) {
+                    document.getElementById("displayData").innerHTML = "Alta eroare";
+                }
+            }
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0!
+            var yyyy = today.getFullYear();
+
+            if (dd < 10) {
+              dd = '0' + dd;
+            }
+
+            if (mm < 10) {
+              mm = '0' + mm;
+            }
+
+            today = dd + '.' + mm + '.' + yyyy;
+            let tip_tranz = "C";
+            let data_tranz = today;
+            let val_tranz = document.getElementById("c_meniu_pret").textContent;
+            let id_stud = "1005";
+            let id_loc = "1";
+            let body = '{"tip_tranz":' + '"' + tip_tranz + '"' + 
+                        ',"data_tranz":' + '"' + data_tranz + '"' +
+                        ',"val_tranz":' + '"' + val_tranz + '"' +
+                        ',"id_stud":' + '"' + id_stud + '"' +
+                        ',"id_loc":' + '"' + id_loc + '"' +
+                        '}';
+            document.getElementById("stare_test").innerHTML=1;
+            console.log(body);
+            xhr.send(body); 
+        }
+        function postTranz1(){
+            let url = `https://apex.oracle.com/pls/apex/psbd_ac4/psbd/tranzactie/`;
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", url, true);
+
+            xhr.setRequestHeader("Content-Type", "application/json");   //Send the proper header information along with the request
+
+            xhr.onreadystatechange = function() { // Call a function when the state changes.
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    document.getElementById("displayData").innerHTML = "Success POST";
+                }
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 555) {
+                    document.getElementById("displayData").innerHTML = "Tranzactia nu e valida";
+                }   
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 550) {
+                    document.getElementById("displayData").innerHTML = "Suma insuficienta";
+                }               
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 400) {
+                    document.getElementById("displayData").innerHTML = "Alta eroare";
+                }
+            }
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0!
+            var yyyy = today.getFullYear();
+
+            if (dd < 10) {
+              dd = '0' + dd;
+            }
+
+            if (mm < 10) {
+              mm = '0' + mm;
+            }
+
+            today = dd + '.' + mm + '.' + yyyy;
+            let tip_tranz = "C";
+            let data_tranz = today;
+            let val_tranz = document.getElementById("c_analize_pret").textContent;
+            let id_stud = "1005";
+            let id_loc = "2";
+            let body = '{"tip_tranz":' + '"' + tip_tranz + '"' + 
+                        ',"data_tranz":' + '"' + data_tranz + '"' +
+                        ',"val_tranz":' + '"' + val_tranz + '"' +
+                        ',"id_stud":' + '"' + id_stud + '"' +
+                        ',"id_loc":' + '"' + id_loc + '"' +
+                        '}';
+            document.getElementById("stare_test").innerHTML=1;
+            console.log(body);
+            xhr.send(body); 
+        }
+        function postTranz2(){
+            let url = `https://apex.oracle.com/pls/apex/psbd_ac4/psbd/tranzactie/`;
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", url, true);
+
+            xhr.setRequestHeader("Content-Type", "application/json");   //Send the proper header information along with the request
+
+            xhr.onreadystatechange = function() { // Call a function when the state changes.
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    document.getElementById("displayData").innerHTML = "Success POST";
+                }
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 555) {
+                    document.getElementById("displayData").innerHTML = "Tranzactia nu e valida";
+                }   
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 550) {
+                    document.getElementById("displayData").innerHTML = "Suma insuficienta";
+                }               
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 400) {
+                    document.getElementById("displayData").innerHTML = "Alta eroare";
+                }
+            }
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0!
+            var yyyy = today.getFullYear();
+
+            if (dd < 10) {
+              dd = '0' + dd;
+            }
+
+            if (mm < 10) {
+              mm = '0' + mm;
+            }
+
+            today = dd + '.' + mm + '.' + yyyy;
+            let tip_tranz = "C";
+            let data_tranz = today;
+            let val_tranz = document.getElementById("c_autobuz_pret").textContent;
+            let id_stud = "1005";
+            let id_loc = "3";
+            let body = '{"tip_tranz":' + '"' + tip_tranz + '"' + 
+                        ',"data_tranz":' + '"' + data_tranz + '"' +
+                        ',"val_tranz":' + '"' + val_tranz + '"' +
+                        ',"id_stud":' + '"' + id_stud + '"' +
+                        ',"id_loc":' + '"' + id_loc + '"' +
+                        '}';
+            document.getElementById("stare_test").innerHTML=1;
+            console.log(body);
+            xhr.send(body); 
+        }
+        function postTranz3(){
+            let url = `https://apex.oracle.com/pls/apex/psbd_ac4/psbd/tranzactie/`;
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", url, true);
+
+            xhr.setRequestHeader("Content-Type", "application/json");   //Send the proper header information along with the request
+
+            xhr.onreadystatechange = function() { // Call a function when the state changes.
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    document.getElementById("displayData").innerHTML = "Success POST";
+                }
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 555) {
+                    document.getElementById("displayData").innerHTML = "Tranzactia nu e valida";
+                }   
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 550) {
+                    document.getElementById("displayData").innerHTML = "Suma insuficienta";
+                }               
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 400) {
+                    document.getElementById("displayData").innerHTML = "Alta eroare";
+                }
+            }
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0!
+            var yyyy = today.getFullYear();
+
+            if (dd < 10) {
+              dd = '0' + dd;
+            }
+
+            if (mm < 10) {
+              mm = '0' + mm;
+            }
+
+            today = dd + '.' + mm + '.' + yyyy;
+            let tip_tranz = "C";
+            let data_tranz = today;
+            let val_tranz = document.getElementById("c_tshirt_pret").textContent;
+            let id_stud = "1005";
+            let id_loc = "4";
+            let body = '{"tip_tranz":' + '"' + tip_tranz + '"' + 
+                        ',"data_tranz":' + '"' + data_tranz + '"' +
+                        ',"val_tranz":' + '"' + val_tranz + '"' +
+                        ',"id_stud":' + '"' + id_stud + '"' +
+                        ',"id_loc":' + '"' + id_loc + '"' +
+                        '}';
+            document.getElementById("stare_test").innerHTML=1;
+            console.log(body);
+            xhr.send(body); 
+        }
+        function postTranz4(){
+            let url = `https://apex.oracle.com/pls/apex/psbd_ac4/psbd/tranzactie/`;
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", url, true);
+
+            xhr.setRequestHeader("Content-Type", "application/json");   //Send the proper header information along with the request
+
+            xhr.onreadystatechange = function() { // Call a function when the state changes.
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    document.getElementById("displayData").innerHTML = "Success POST";
+                }
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 555) {
+                    document.getElementById("displayData").innerHTML = "Tranzactia nu e valida";
+                }   
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 550) {
+                    document.getElementById("displayData").innerHTML = "Suma insuficienta";
+                }               
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 400) {
+                    document.getElementById("displayData").innerHTML = "Alta eroare";
+                }
+            }
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0!
+            var yyyy = today.getFullYear();
+
+            if (dd < 10) {
+              dd = '0' + dd;
+            }
+
+            if (mm < 10) {
+              mm = '0' + mm;
+            }
+
+            today = dd + '.' + mm + '.' + yyyy;
+            let tip_tranz = "V";
+            let data_tranz = today;
+            let val_tranz = document.getElementById("v_mobil_pret").textContent;
+            let id_stud = "1005";
+            let id_loc = "5";
+            let body = '{"tip_tranz":' + '"' + tip_tranz + '"' + 
+                        ',"data_tranz":' + '"' + data_tranz + '"' +
+                        ',"val_tranz":' + '"' + val_tranz + '"' +
+                        ',"id_stud":' + '"' + id_stud + '"' +
+                        ',"id_loc":' + '"' + id_loc + '"' +
+                        '}';
+            document.getElementById("stare_test").innerHTML=1;
+            console.log(body);
+            xhr.send(body); 
+        }
+        function postTranz5(){
+            let url = `https://apex.oracle.com/pls/apex/psbd_ac4/psbd/tranzactie/`;
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", url, true);
+
+            xhr.setRequestHeader("Content-Type", "application/json");   //Send the proper header information along with the request
+
+            xhr.onreadystatechange = function() { // Call a function when the state changes.
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    document.getElementById("displayData").innerHTML = "Success POST";
+                }
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 555) {
+                    document.getElementById("displayData").innerHTML = "Tranzactia nu e valida";
+                }   
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 550) {
+                    document.getElementById("displayData").innerHTML = "Suma insuficienta";
+                }               
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 400) {
+                    document.getElementById("displayData").innerHTML = "Alta eroare";
+                }
+            }
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0!
+            var yyyy = today.getFullYear();
+
+            if (dd < 10) {
+              dd = '0' + dd;
+            }
+
+            if (mm < 10) {
+              mm = '0' + mm;
+            }
+
+            today = dd + '.' + mm + '.' + yyyy;
+            let tip_tranz = "V";
+            let data_tranz = today;
+            let val_tranz = document.getElementById("v_couch_pret").textContent;
+            let id_stud = "1005";
+            let id_loc = "6";
+            let body = '{"tip_tranz":' + '"' + tip_tranz + '"' + 
+                        ',"data_tranz":' + '"' + data_tranz + '"' +
+                        ',"val_tranz":' + '"' + val_tranz + '"' +
+                        ',"id_stud":' + '"' + id_stud + '"' +
+                        ',"id_loc":' + '"' + id_loc + '"' +
+                        '}';
+            document.getElementById("stare_test").innerHTML=1;
+            console.log(body);
+            xhr.send(body); 
+        }
+        function postTranz6(){
+            let url = `https://apex.oracle.com/pls/apex/psbd_ac4/psbd/tranzactie/`;
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", url, true);
+
+            xhr.setRequestHeader("Content-Type", "application/json");   //Send the proper header information along with the request
+
+            xhr.onreadystatechange = function() { // Call a function when the state changes.
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    document.getElementById("displayData").innerHTML = "Success POST";
+                }
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 555) {
+                    document.getElementById("displayData").innerHTML = "Tranzactia nu e valida";
+                }   
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 550) {
+                    document.getElementById("displayData").innerHTML = "Suma insuficienta";
+                }               
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 400) {
+                    document.getElementById("displayData").innerHTML = "Alta eroare";
+                }
+            }
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0!
+            var yyyy = today.getFullYear();
+
+            if (dd < 10) {
+              dd = '0' + dd;
+            }
+
+            if (mm < 10) {
+              mm = '0' + mm;
+            }
+
+            today = dd + '.' + mm + '.' + yyyy;
+            let tip_tranz = "V";
+            let data_tranz = today;
+            let val_tranz = document.getElementById("v_car_pret").textContent;
+            let id_stud = "1005";
+            let id_loc = "7";
+            let body = '{"tip_tranz":' + '"' + tip_tranz + '"' + 
+                        ',"data_tranz":' + '"' + data_tranz + '"' +
+                        ',"val_tranz":' + '"' + val_tranz + '"' +
+                        ',"id_stud":' + '"' + id_stud + '"' +
+                        ',"id_loc":' + '"' + id_loc + '"' +
+                        '}';
+            document.getElementById("stare_test").innerHTML=1;
+            console.log(body);
+            xhr.send(body); 
+        }
+        function postTranz7(){
+            let url = `https://apex.oracle.com/pls/apex/psbd_ac4/psbd/tranzactie/`;
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", url, true);
+
+            xhr.setRequestHeader("Content-Type", "application/json");   //Send the proper header information along with the request
+
+            xhr.onreadystatechange = function() { // Call a function when the state changes.
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    document.getElementById("displayData").innerHTML = "Success POST";
+                }
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 555) {
+                    document.getElementById("displayData").innerHTML = "Tranzactia nu e valida";
+                }   
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 550) {
+                    document.getElementById("displayData").innerHTML = "Suma insuficienta";
+                }               
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 400) {
+                    document.getElementById("displayData").innerHTML = "Alta eroare";
+                }
+            }
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0!
+            var yyyy = today.getFullYear();
+
+            if (dd < 10) {
+              dd = '0' + dd;
+            }
+
+            if (mm < 10) {
+              mm = '0' + mm;
+            }
+
+            today = dd + '.' + mm + '.' + yyyy;
+            let tip_tranz = "V";
+            let data_tranz = today;
+            let val_tranz = document.getElementById("v_laptop_pret").textContent;
+            let id_stud = "1005";
+            let id_loc = "8";
+            let body = '{"tip_tranz":' + '"' + tip_tranz + '"' + 
+                        ',"data_tranz":' + '"' + data_tranz + '"' +
+                        ',"val_tranz":' + '"' + val_tranz + '"' +
+                        ',"id_stud":' + '"' + id_stud + '"' +
+                        ',"id_loc":' + '"' + id_loc + '"' +
+                        '}';
+            document.getElementById("stare_test").innerHTML=3;
+            console.log(body);
+            xhr.send(body); 
+        }
+        function postTranz8(){
+            document.getElementById("stare_test").innerHTML=2;
+            let url = `https://apex.oracle.com/pls/apex/psbd_ac4/psbd/tranzactie/`;
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", url, true);
+
+            xhr.setRequestHeader("Content-Type", "application/json");   //Send the proper header information along with the request
+
+            xhr.onreadystatechange = function() { // Call a function when the state changes.
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    document.getElementById("displayData").innerHTML = "Success POST";
+                }
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 555) {
+                    document.getElementById("displayData").innerHTML = "Tranzactia nu e valida";
+                }   
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 550) {
+                    document.getElementById("displayData").innerHTML = "Suma insuficienta";
+                }               
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 400) {
+                    document.getElementById("displayData").innerHTML = "Alta eroare";
+                }
+            }
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0!
+            var yyyy = today.getFullYear();
+
+            if (dd < 10) {
+              dd = '0' + dd;
+            }
+
+            if (mm < 10) {
+              mm = '0' + mm;
+            }
+
+            today = dd + '.' + mm + '.' + yyyy;
+            let tip_tranz = "A";
+            let data_tranz = today;
+            let val_tranz = document.getElementById("a_sala_pret").textContent;
+            let id_stud = "1005";
+            let id_loc = "9";
+            let body = '{"tip_tranz":' + '"' + tip_tranz + '"' + 
+                        ',"data_tranz":' + '"' + data_tranz + '"' +
+                        ',"val_tranz":' + '"' + val_tranz + '"' +
+                        ',"id_stud":' + '"' + id_stud + '"' +
+                        ',"id_loc":' + '"' + id_loc + '"' +
+                        '}';
+            
+            console.log(body);
+            xhr.send(body); 
+        }
+        function postTranz9(){
+            let url = `https://apex.oracle.com/pls/apex/psbd_ac4/psbd/tranzactie/`;
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", url, true);
+
+            xhr.setRequestHeader("Content-Type", "application/json");   //Send the proper header information along with the request
+
+            xhr.onreadystatechange = function() { // Call a function when the state changes.
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    document.getElementById("displayData").innerHTML = "Success POST";
+                }
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 555) {
+                    document.getElementById("displayData").innerHTML = "Tranzactia nu e valida";
+                }   
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 550) {
+                    document.getElementById("displayData").innerHTML = "Suma insuficienta";
+                }               
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 400) {
+                    document.getElementById("displayData").innerHTML = "Alta eroare";
+                }
+            }
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0!
+            var yyyy = today.getFullYear();
+
+            if (dd < 10) {
+              dd = '0' + dd;
+            }
+
+            if (mm < 10) {
+              mm = '0' + mm;
+            }
+
+            today = dd + '.' + mm + '.' + yyyy;
+            let tip_tranz = "A";
+            let data_tranz = today;
+            let val_tranz = document.getElementById("a_transport_pret").textContent;
+            let id_stud = "1005";
+            let id_loc = "10";
+            let body = '{"tip_tranz":' + '"' + tip_tranz + '"' + 
+                        ',"data_tranz":' + '"' + data_tranz + '"' +
+                        ',"val_tranz":' + '"' + val_tranz + '"' +
+                        ',"id_stud":' + '"' + id_stud + '"' +
+                        ',"id_loc":' + '"' + id_loc + '"' +
+                        '}';
+            document.getElementById("stare_test").innerHTML=1;
+            console.log(body);
+            xhr.send(body); 
+        }
+        function postTranz10(){
+            let url = `https://apex.oracle.com/pls/apex/psbd_ac4/psbd/tranzactie/`;
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", url, true);
+
+            xhr.setRequestHeader("Content-Type", "application/json");   //Send the proper header information along with the request
+
+            xhr.onreadystatechange = function() { // Call a function when the state changes.
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    document.getElementById("displayData").innerHTML = "Success POST";
+                }
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 555) {
+                    document.getElementById("displayData").innerHTML = "Tranzactia nu e valida";
+                }   
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 550) {
+                    document.getElementById("displayData").innerHTML = "Suma insuficienta";
+                }               
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 400) {
+                    document.getElementById("displayData").innerHTML = "Alta eroare";
+                }
+            }
+            var today = new Date();
+            var dd = today.getDate();
+            var mm = today.getMonth() + 1; //January is 0!
+            var yyyy = today.getFullYear();
+
+            if (dd < 10) {
+              dd = '0' + dd;
+            }
+
+            if (mm < 10) {
+              mm = '0' + mm;
+            }
+
+            today = dd + '.' + mm + '.' + yyyy;
+            let tip_tranz = "A";
+            let data_tranz = today;
+            let val_tranz = document.getElementById("a_biblioteca_pret").textContent;
+            let id_stud = "1005";
+            let id_loc = "11";
+            let body = '{"tip_tranz":' + '"' + tip_tranz + '"' + 
+                        ',"data_tranz":' + '"' + data_tranz + '"' +
+                        ',"val_tranz":' + '"' + val_tranz + '"' +
+                        ',"id_stud":' + '"' + id_stud + '"' +
+                        ',"id_loc":' + '"' + id_loc + '"' +
+                        '}';
+            document.getElementById("stare_test").innerHTML=1;
+            console.log(body);
+            xhr.send(body); 
+        }
+
     </script>
     <!-- jquery 2.2.4 js-->
     <script src="assets/js/jquery-2.2.4.min.js"></script>
