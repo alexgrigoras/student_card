@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Pagina de start</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- carousel CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <!--header icon CSS -->
+    <link rel="icon" href="assets/img/fabicon.png">
+    <!-- animations CSS -->
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <!-- font-awsome CSS -->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- mobile menu CSS -->
+    <link rel="stylesheet" href="assets/css/slicknav.min.css">
+    <!--css animation-->
+    <link rel="stylesheet" href="assets/css/animation.css">
+    <!--css animation-->
+    <link rel="stylesheet" href="assets/css/material-design-iconic-font.min.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- responsive CSS -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="./Pie Chart/Chart.bundle.js"></script>
+    <script src="./Pie Chart/utils.js"></script>
+  </head>
+  <body onload="info()">
+    <!--header area start-->
+    <div class="header-area wow fadeInDown header-absolate" id="nav" data-0="position:fixed;" data-top-top="position:fixed;top:0;" data-edge-strategy="set">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 d-block d-lg-none">
+                    <div class="mobile-menu"></div>
+                </div>
+                <div class="col-2 col-lg-2">
+                    <div class="logo-area">
+                        <a href="./index.html"><img src="assets/img/logo_3.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-4 col-lg-8 d-none d-lg-block">
+                    <div class="main-menu text-right">
+                        <nav>
+                            <ul id="slick-nav">
+                                <li><a class="scroll" href="#home">Acasă</a></li>
+                                <li><a class="scroll" href="#about">Informații</a></li>
+                                <li><a class="scroll" href="#team">Echipă</a></li>
+                                <li><a class="scroll" href="#contact">Contact</a></li>
+                                <li style="margin-left: 20px;"><a id="autentificare" class="logibtn gradient-btn">Autentificare</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <!-- <div>
+                    <a id="autentificare" class="logibtn gradient-btn">Autentificare</a>
+                </div> -->
+                
+            </div>
+        </div>
+    </div>
+    <!--header area end-->
+
+    <!--welcome area start-->
+    <div class="welcome-area wow fadeInUp" id="home">
+        <div id="particles-js"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 align-self-center">
+                    <div class="welcome-right">
+                        <div class="welcome-text">
+                             <h1>Fii studentul viitorului! </h1>
+                            <h4>Acum poți efectua plăți, împrumuta cărți și deține abonamente cu un singur card. </h4>
+                        </div>
+                        <div class="welcome-btn">
+                            <a href="#team" class="gradient-btn v2 mr-20">Dezvoltatori</a>
+                            <a href="#about" class="gradient-btn v2">Oferte</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                     <div class="space-90"></div>
+                     <div class="space-90"></div>
+                     <div class="space-20"></div>
+                    <div class="welcome-img">
+                        <img src="assets/img/people6.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--welcome area end-->
+
+    <!--about area start-->
+    <div class="about-area wow fadeInUp" id="about">
+        <div class="space-30"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="heading">
+                        <h5>Universități partenere</h5>
+                    </div>
+                    <div class="space-30"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="logo-carousel owl-carousel text-center">
+                        <div class="single-logo-wrapper">
+                            <div class="single-item">
+                                <img src="assets/img/uaic.png" height="80px" alt="">
+                            </div>
+                        </div>
+                        <div class="single-logo-wrapper">
+                            <div class="single-item">
+                                <img src="assets/img/asachi.gif" height="80px" alt="">
+                            </div>
+                        </div>
+                        <div class="single-logo-wrapper">
+                            <div class="single-item">
+                                <img src="assets/img/umf.png" height="80px" alt="">
+                            </div>
+                        </div>
+                        <div class="single-logo-wrapper">
+                            <div class="single-item">
+                                <img src="assets/img/arte.png" height="80px" alt="">
+                            </div>
+                        </div>
+                        <div class="single-logo-wrapper">
+                            <div class="single-item">
+                                <img src="assets/img/agricole.png" height="80px" alt="">
+                            </div>
+                        </div>
+                        <div class="single-logo-wrapper">
+                            <div class="single-item">
+                                <img src="assets/img/upa.jpg" height="80px" alt="">
+                            </div>
+                        </div>
+                        <div class="single-logo-wrapper">
+                            <div class="single-item">
+                                <img src="assets/img/c-logo-2.png" alt="">
+                            </div>
+                        </div>
+                        <div class="single-logo-wrapper">
+                            <div class="single-item">
+                                <img src="assets/img/c-logo-5.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="space-90"></div>
+    </div>
+    <!--about area end-->
+
+    <!--single about area start-->
+    <div class="single-about-area wow fadeInUp">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <a href="./autentificare.html" class="single-about">
+                        <div class="single-about-img">
+                            <img src="assets/img/about-icon-1.png" alt="">
+                        </div>
+                        <div class="single-about-text">
+                            <h4>Card Student Startup</h4>
+                            <p>Fii în pas cu moda și aciziționează ultimul model de card Student Startup. Nu rata oferta de RON 37</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4">
+                    <a href="./autentificare.html" class="single-about">
+                        <div class="single-about-img">
+                            <img src="assets/img/about-icon-2.png" alt="">
+                        </div>
+                        <div class="single-about-text">
+                            <h4>Card Student Premium</h4>
+                            <p>Fii în pas cu moda și aciziționează ultimul model de card Student Premium. Nu rata oferta de RON 56</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4">
+                    <a href="./autentificare.html" class="single-about">
+                        <div class="single-about-img">
+                            <img src="assets/img/about-icon-3.png" alt="">
+                        </div>
+                        <div class="single-about-text">
+                            <h4>Card Student Pro</h4>
+                            <p>Fii în pas cu moda și aciziționează ultimul model de card Student Pro. Nu rata oferta de RON 99</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="space-90"></div>
+    </div>
+    
+    
+
+    <!--team-bg-->
+    <div class="team-bg">
+        <!--team area start-->
+        <div class="team-area wow fadeInUp section-padding" id="team">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center">
+                        <div class="heading">
+                            <h5>Echipa fondatoare</h5>
+                            <div class="space-10"></div>
+                            <h1>Mulțumiri</h1>
+                        </div>
+                        <div class="space-60"></div>
+                    </div>
+                </div>
+                <div class="row text-center">
+                    <div class="col-12 col-md-6 col-lg-3"></div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="single-team">
+                            <div class="single-team-img">
+                                <img src="assets/img/alex.jpg" alt="">
+                            </div>
+                            <div class="space-30"></div>
+                            <div class="single-team-content">
+                                <h3>Alexandru G.</h3>
+                                <div class="space-10"></div>
+                                <h6>Database developer</h6>
+                            </div>
+                            <div class="space-10"></div>
+                            <div class="single-team-social">
+                                <ul>
+                                    <li><a class="ico-1" href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a class="ico-2" href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a class="ico-3" href="#"><i class="fa fa-twitter "></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="single-team">
+                            <div class="single-team-img">
+                                <img src="assets/img/ioan.jpg" alt="">
+                            </div>
+                            <div class="space-30"></div>
+                            <div class="single-team-content">
+                                <h3>Ioan S.</h3>
+                                <div class="space-10"></div>
+                                <h6>Front end developer</h6>
+                            </div>
+                            <div class="space-10"></div>
+                            <div class="single-team-social">
+                                <ul>
+                                    <li><a class="ico-1" href="#"><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a class="ico-2" href="#"><i class="fa fa-facebook"></i></a></li>
+                                    <li><a class="ico-3" href="#"><i class="fa fa-twitter "></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        
+            </div>
+            <div class="space-30"></div>
+        </div>
+
+    <!--community area start-->
+    <div class="community-area wow fadeInUp section-padding" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="heading">
+                        <h5>Fii alături de noi</h5>
+                        <div class="space-10"></div>
+                        <h1>Unde ne poți găsi</h1>
+                    </div>
+                <div class="space-60"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6 col-lg">
+                    <div class="single-community big-social">
+                        <a class="google-plus" href="#"><i class="fa fa-google-plus"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg">
+                    <div class="single-community mid-social">
+                        <a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a>
+                    </div>
+                    <div class="single-community">
+                        <a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg">
+                    <div class="single-community">
+                        <a class="github" href="#"><i class="fa fa-github"></i></a>
+                    </div>
+                    <div class="single-community mid-social">
+                        <a class="behance" href="#"><i class="fa fa-behance"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg">
+                    <div class="single-community big-social">
+                        <a class="youtube" href="#"><i class="fa fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg">
+                    <div class="single-community mid-social">
+                        <a class="twitter" href="#"><i class="fa fa-twitter"></i></a>
+                    </div>
+                    <div class="single-community">
+                        <a class="flickr" href="#"><i class="fa fa-flickr"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="space-20"></div>
+                
+            </div>
+        </div>
+    </div>
+
+    <!--community area end-->
+
+    <!--footer area start-->
+    <div class="footera-area section-padding wow fadeInDown">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-footer">
+                        <div class="logo-area footer">
+                            <a href="#"><img src="assets/img/logo_3.png" alt=""></a>
+                        </div>
+                        <div class="space-20"></div>
+                        <p>Acest proiect este realizat pentru materia PSBD(Programarea sistemelor de baze de date) în cadrul facultății de Automatică și calculatoare Iași. </p>
+                        <div class="space-10"></div>
+                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        document.getElementById("autentificare").onclick = function() {log_back()};
+        function info(){
+            if(sessionStorage.getItem("lastname")){
+                document.getElementById("autentificare").innerHTML="<i class='far fa-user'></i> "+sessionStorage.getItem("lastname");
+            }
+        }
+        function log_back(){
+            if(sessionStorage.getItem("lastname")){
+                window.location.href='./Cont_curent.html';
+            }
+            else{
+                window.location.href='./autentificare.html';
+            }
+        }
+    </script>
+    <!-- jquery 2.2.4 js-->
+    <script src="assets/js/jquery-2.2.4.min.js"></script>
+    <!-- popper js-->
+    <script src="assets/js/popper.js"></script>
+    <!-- carousel js-->
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <!-- wow js-->
+    <script src="assets/js/wow.min.js"></script>
+    <!-- bootstrap js-->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!--skroller js-->
+    <script src="assets/js/skrollr.min.js"></script>
+    <!--mobile menu js-->
+    <script src="assets/js/jquery.slicknav.min.js"></script>
+    <!--particle s-->
+    <script src="assets/js/particles.min.js"></script>
+    <!-- main js-->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>

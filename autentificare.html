@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Autentificare</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- carousel CSS -->
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <!--header icon CSS -->
+    <link rel="icon" href="assets/img/fabicon.png">
+    <!-- animations CSS -->
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <!-- font-awsome CSS -->
+    <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- mobile menu CSS -->
+    <link rel="stylesheet" href="assets/css/slicknav.min.css">
+    <!--css animation-->
+    <link rel="stylesheet" href="assets/css/animation.css">
+    <!--css animation-->
+    <link rel="stylesheet" href="assets/css/material-design-iconic-font.min.css">
+    <!-- style CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- responsive CSS -->
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  </head>
+  <body>
+    <!--header area start-->
+    <div class="header-area wow fadeInDown header-absolate" id="nav" data-0="position:fixed;" data-top-top="position:fixed;top:0;" data-edge-strategy="set">
+        <div class="container">
+            <div class="row">
+                <div class="col-4 d-block d-lg-none">
+                    <div class="mobile-menu"></div>
+                </div>
+                <div class="col-2 col-lg-2">
+                    <div class="logo-area">
+                        <a href="./index.html"><img src="assets/img/logo_3.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-4 col-lg-8 d-none d-lg-block">
+                    <div class="main-menu text-center">
+                        <nav>
+                            <ul id="slick-nav">
+                                <li><a class="scroll" href="./index.html">Acasă</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+    </div>
+    <!--header area end-->
+
+    <!--welcome area start-->
+    <div class="welcome-area wow fadeInUp" id="home">
+        <div class="space-40"></div>
+        <div class="row">
+                <div class="col-12 col-md-6">
+                    <div class="about-mid-img">
+                        <img src="assets/img/about-left.png" alt="">
+                    </div>
+                </div>
+                <div class=" chestionar col-12 col-md-6 align-self-center" ng-app="">
+                <form name="myForm">
+                    <div class="about-mid-text">
+                        <h1>Bună {{name}}! </h1>
+                    </div>
+                    <p><input type="text" ng-model="name" placeholder="User" name="name" id="nume" required><span ng-show="myForm.name.$touched && myForm.name.$invalid"> numele este obligatoriu.</span></p>
+                    <p><input type="password" ng-model="surname" placeholder="Parolă" name="surname" id="parola" required><span ng-show="myForm.surname.$touched && myForm.surname.$invalid"> parola este obligatorie.</span></p>
+                    <a href="./modificare.html" class="mr-20"> * Mi-am uitat parola</a>
+                    <div class="space-20"></div>
+                    <a href="#" class="gradient-btn v1 about-btn mr-20" id="intra">Autentifică-te</a><br>
+                    <div class="space-20"></div>
+                    <a href="inregistrare.html" class="mr-20"> Nu ai cont?</a>
+                    <div id="displayData"></div>
+                </form>
+                </div>
+            </div>
+             <div class="space-60"></div>
+    </div>
+    <!--welcome area end-->
+
+    <!--footer area start-->
+    <div class="footera-area section-padding wow fadeInDown">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-lg-4">
+                    <div class="single-footer">
+                        <div class="logo-area footer">
+                            <a href="#"><img src="assets/img/logo_3.png" alt=""></a>
+                        </div>
+                        <div class="space-20"></div>
+                        <p>Acest proiect este realizat pentru materia PSBD(Programarea sistemelor de baze de date) în cadrul facultății de Automatică și calculatoare Iași. </p>
+                        <div class="space-10"></div>
+                        <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+</p>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-lg-2">
+                    <div class="single-footer">
+                        <ul>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Token Sale</a></li>
+                            <li><a href="#">Roadmap</a></li>
+                            <li><a href="#">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        
+        document.getElementById("intra").onclick = function() {myFunction()};
+        function myFunction() {
+
+        let nume = document.getElementById("nume").value;
+        let parola = document.getElementById("parola").value;
+        // let nume = 'florin';
+        // let parola = 'florin551';
+        let url = `https://apex.oracle.com/pls/apex/psbd_ac4/psbd/student/login/?nume=${nume}&parola=${parola}`;
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url, true);
+
+        xhr.setRequestHeader("Content-Type", "application/json");   //Send the proper header information along with the request
+
+        xhr.onreadystatechange = function() { // Call a function when the state changes.
+            if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                let jsonData = JSON.parse(this.response);
+                let autentificare = jsonData.autentificare;
+                let motiv = jsonData.motiv;
+                if(autentificare=="corect"){
+                    if (typeof(Storage) !== "undefined") {
+                      // Store
+                      sessionStorage.setItem("lastname", nume);
+                      // Retrieve
+                      //document.getElementById("s").innerHTML = localStorage.getItem("lastname");
+                } 
+                document.getElementById("displayData").innerHTML = "Autentificare: " + autentificare + " - motiv: " + motiv;
+                window.location.href='./Cont_curent.html';}
+                
+            }
+        }
+
+        xhr.send(); 
+    }
+        
+    </script>
+    <!-- jquery 2.2.4 js-->
+    <script src="assets/js/jquery-2.2.4.min.js"></script>
+    <!-- popper js-->
+    <script src="assets/js/popper.js"></script>
+    <!-- carousel js-->
+    <script src="assets/js/owl.carousel.min.js"></script>
+    <!-- wow js-->
+    <script src="assets/js/wow.min.js"></script>
+    <!-- bootstrap js-->
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!--skroller js-->
+    <script src="assets/js/skrollr.min.js"></script>
+    <!--mobile menu js-->
+    <script src="assets/js/jquery.slicknav.min.js"></script>
+    <!--particle s-->
+    <script src="assets/js/particles.min.js"></script>
+    <!-- main js-->
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
