@@ -1,13 +1,14 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Inregistrare</title>
+    <title>Cont curent</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- carousel CSS -->
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <!--header icon CSS -->
     <link rel="icon" href="assets/img/fabicon.png">
     <!-- animations CSS -->
@@ -26,9 +27,13 @@
     <link rel="stylesheet" href="style.css">
     <!-- responsive CSS -->
     <link rel="stylesheet" href="assets/css/responsive.css">
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="./Pie Chart/Chart.bundle.js"></script>
+    <script src="./Pie Chart/utils.js"></script>
   </head>
-  <body>
+  <body onload="basic();dateCard();getTranz()">
     <!--header area start-->
     <div class="header-area wow fadeInDown header-absolate" id="nav" data-0="position:fixed;" data-top-top="position:fixed;top:0;" data-edge-strategy="set">
         <div class="container">
@@ -36,28 +41,38 @@
                 <div class="col-4 d-block d-lg-none">
                     <div class="mobile-menu"></div>
                 </div>
-                <div class="col-2 col-lg-2">
+                <div class="col-4 col-lg-2">
                     <div class="logo-area">
                         <a href="./index.html"><img src="assets/img/logo_3.png" alt=""></a>
                     </div>
                 </div>
-                <div class="col-4 col-lg-8 d-none d-lg-block">
+                <div class="col-4 col-lg-7 d-none d-lg-block">
                     <div class="main-menu text-center">
                         <nav>
                             <ul id="slick-nav">
                                 <li><a class="scroll" href="./index.html">Acasă</a></li>
+                                <li><a class="scroll" href="./Cont_curent.html">Cont</a></li>
+                                <li><a class="scroll" href="./modificare2.html">Profil & setări</a></li>
+                                
                             </ul>
                         </nav>
                     </div>
                 </div>
-                
-                
+                <div class="col-4 col-lg-3 d-none d-lg-block">
+                    <div class="text-right">
+                       
+                            <strong id="utilizator">user</strong>
+                        
+                        <span id="iesi">
+                            | Log out
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
     <!--header area end-->
-
-    <!--welcome area start-->
+      <!--welcome area start-->
     <div class="welcome-area wow fadeInUp" id="home">
         <div class="row">
             <div class="col-12 col-md-4">
@@ -68,18 +83,18 @@
             <div class=" chestionar col-12 col-md-7 align-self-center" ng-app="">
                 <form name="myForm">          
                     <div class="about-mid-text">
-                        <h1>Ne bucurăm să te avem alături de noi {{name}} </h1>
+                        <h1>Îl vom modifica pe {{name}} </h1>
                     </div>
-                    <p>Haide sa ne cunoastem</p>
+                    <p><input type="text" ng-model="id" placeholder="ID" name="id" id="id_stud" readonly></p>
+
                     <p><input type="text" ng-model="name" placeholder="Nume" name="name" id="nume" required><span ng-show="myForm.name.$touched && myForm.name.$invalid"> Numele este obligatoriu.</span></p>
                     <p><input type="text" ng-model="uni" placeholder="Universitate" name="" id="univ"  required><span ng-show="myForm.surname.$touched && myForm.surname.$invalid"> Universitatea este obligatorie.</span></p>
                     <p><input type="text" ng-model="facultate" placeholder="Facultate" name="" id="fac"  required><span ng-show="myForm.surname.$touched && myForm.surname.$invalid"> Facultatea este obligatorie.</span></p>
                     <p><input type="text" ng-model="tel" placeholder="Telefon" name="" id="tel"  required><span ng-show="myForm.surname.$touched && myForm.surname.$invalid"> Telefonul este obligatoriu.</span></p>
                     <p><input type="text" ng-model="email" placeholder="Email" name="" id="email"  required><span ng-show="myForm.surname.$touched && myForm.surname.$invalid"> Emailul este obligatoriu.</span></p>
-                    <p><input type="password" placeholder="Parola" id="parola"   required><span ng-show="myForm.surname.$touched && myForm.surname.$invalid"> Parola este obligatorie.</span></p>
+                    <p><input type="password" ng-model="parola" placeholder="Parola" id="parola"   required><span ng-show="myForm.surname.$touched && myForm.surname.$invalid"> Parola este obligatorie.</span></p>
                     <div class="space-10"></div>
                     <a href="#" class="gradient-btn v2 about-btn" id="trimite"> <i class="fa fa-send-o"></i> Trimite</a>
-                    <div class="space-10"></div>
                     <div id="displayData"></div>
                     <div class="space-90"></div>
                 </form>
@@ -88,7 +103,11 @@
     </div>
     <!--welcome area end-->
 
-    <!--footer area start-->
+    <div class="space-40"></div>
+<hr style="border-color: rgba(90,83,152,0.5);">
+
+  
+ <!--footer area start-->
     <div class="footera-area section-padding wow fadeInDown">
         <div class="container">
             <div class="row">
@@ -106,46 +125,63 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 </p>
                     </div>
                 </div>
-                <div class="col-12 col-sm-6 col-lg-2">
-                    <div class="single-footer">
-                        <ul>
-                            <li><a href="#">About</a></li>
-                            <li><a href="#">Token Sale</a></li>
-                            <li><a href="#">Roadmap</a></li>
-                            <li><a href="#">Contact</a></li>
-                        </ul>
-                    </div>
-                </div>
                 
             </div>
         </div>
     </div>
-    <script>
-        document.getElementById("trimite").onclick = function() {myFunction()};
-        function myFunction() {
+<script>
+        document.getElementById("iesi").onclick = function() {iesi()};
+        document.getElementById("utilizator").innerHTML="<i class='far fa-user'></i> "+sessionStorage.getItem("lastname");
+         document.getElementById("trimite").onclick = function() {trimite()};
+        function basic(){
+            document.getElementById("nume").setAttribute("placeholder",sessionStorage.getItem("lastname"));
+
+        }
+        function iesi(){
+            window.location.href='./autentificare.html';
+        }
+        function dateCard() {
+            var xhttp = new XMLHttpRequest();
+            let nume = sessionStorage.getItem("lastname");
+            let url = `https://apex.oracle.com/pls/apex/psbd_ac4/psbd/card/${nume}`;
+
+            xhttp.open("GET", url, true);
+            xhttp.send();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                //let jsonData = JSON.parse(this.response);
+                let data = this.response;
+                var obj = JSON.parse(data);
+                
+                document.getElementById("id_stud").setAttribute("placeholder",obj.items[0].id_student);
+              }
+            }
+        }
+
+        function trimite() {
            
             let url = `https://apex.oracle.com/pls/apex/psbd_ac4/psbd/student/`;
             var xhr = new XMLHttpRequest();
-            xhr.open("POST", url, true);
+            xhr.open("PUT", url, true);
 
             xhr.setRequestHeader("Content-Type", "application/json");   //Send the proper header information along with the request
 
             xhr.onreadystatechange = function() { // Call a function when the state changes.
                 if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-                    document.getElementById("displayData").innerHTML = "Înregistrare cu Succes";
-                     window.location.href='./autentificare.html';
+                    document.getElementById("displayData").innerHTML = "Success POST";
                 }
                 else if (this.readyState === XMLHttpRequest.DONE && this.status === 555) {
-                    document.getElementById("displayData").innerHTML = "Utilizatorul există deja";
+                    document.getElementById("displayData").innerHTML = "User alredy exists";
                 }           
                 else if (this.readyState === XMLHttpRequest.DONE && this.status === 550) {
-                    document.getElementById("displayData").innerHTML = "Datele nu sunt corecte";
+                    document.getElementById("displayData").innerHTML = "Data is not correct";
                 }
                 else if (this.readyState === XMLHttpRequest.DONE && this.status === 400) {
-                    document.getElementById("displayData").innerHTML = "Alte erori";
+                    document.getElementById("displayData").innerHTML = "Other error";
                 }
             }
-
+            let id_stud = document.getElementById("id_stud").getAttribute("placeholder");
+            document.getElementById("displayData").innerHTML=id_stud;
             let nume = document.getElementById("nume").value;
             let nume_univ = document.getElementById("univ").value;
             let nume_fac = document.getElementById("fac").value;
@@ -153,23 +189,25 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             let email = document.getElementById("email").value;
             let parola = document.getElementById("parola").value;
             let body = '{"nume":' + '"' + nume + '"' + 
-                        ',"n_universitate":' + '"' + nume_univ + '"' + 
-                        ',"n_facultate":' + '"' + nume_fac + '"' +
-                        ',"telefon":' + '"' + telefon + '"' +
-                        ',"email":' + '"' + email + '"' +
-                        ',"parola":' + '"' + parola + '"' +
-                        '}';
+                    ',"id_stud":' + '"' + id_stud + '"' + 
+                    ',"n_universitate":' + '"' + nume_univ + '"' + 
+                    ',"n_facultate":' + '"' + nume_fac + '"' +
+                    ',"telefon":' + '"' + telefon + '"' +
+                    ',"email":' + '"' + email + '"' +
+                    ',"parola":' + '"' + parola + '"' +
+                    '}';
             document.getElementById("displayData").innerHTML=body;
             console.log(body);
             xhr.send(body); 
 
         }
         
+
     </script>
     <!-- jquery 2.2.4 js-->
     <script src="assets/js/jquery-2.2.4.min.js"></script>
     <!-- popper js-->
-    <!-- <script src="assets/js/popper.js"></script> -->
+    <script src="assets/js/popper.js"></script>
     <!-- carousel js-->
     <script src="assets/js/owl.carousel.min.js"></script>
     <!-- wow js-->

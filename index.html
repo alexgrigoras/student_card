@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- carousel CSS -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <!--header icon CSS -->
     <link rel="icon" href="assets/img/fabicon.png">
@@ -30,7 +31,7 @@
     <script src="./Pie Chart/Chart.bundle.js"></script>
     <script src="./Pie Chart/utils.js"></script>
   </head>
-  <body>
+  <body onload="info()">
     <!--header area start-->
     <div class="header-area wow fadeInDown header-absolate" id="nav" data-0="position:fixed;" data-top-top="position:fixed;top:0;" data-edge-strategy="set">
         <div class="container">
@@ -40,24 +41,25 @@
                 </div>
                 <div class="col-2 col-lg-2">
                     <div class="logo-area">
-                        <a href="#"><img src="assets/img/logo_3.png" alt=""></a>
+                        <a href="./index.html"><img src="assets/img/logo_3.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-4 col-lg-8 d-none d-lg-block">
-                    <div class="main-menu text-center">
+                    <div class="main-menu text-right">
                         <nav>
                             <ul id="slick-nav">
                                 <li><a class="scroll" href="#home">Acasă</a></li>
                                 <li><a class="scroll" href="#about">Informații</a></li>
                                 <li><a class="scroll" href="#team">Echipă</a></li>
                                 <li><a class="scroll" href="#contact">Contact</a></li>
+                                <li style="margin-left: 20px;"><a id="autentificare" class="logibtn gradient-btn">Autentificare</a></li>
                             </ul>
                         </nav>
                     </div>
                 </div>
-                <div>
-                    <a href="./autentificare.html" class="logibtn gradient-btn">Autentificare</a>
-                </div>
+                <!-- <div>
+                    <a id="autentificare" class="logibtn gradient-btn">Autentificare</a>
+                </div> -->
                 
             </div>
         </div>
@@ -76,8 +78,8 @@
                             <h4>Acum poți efectua plăți, împrumuta cărți și deține abonamente cu un singur card. </h4>
                         </div>
                         <div class="welcome-btn">
-                            <a href="#" class="gradient-btn v2 mr-20">Beneficiile Spacecard-ului</a>
-                            <a href="#" class="gradient-btn v2">Oferte</a>
+                            <a href="#team" class="gradient-btn v2 mr-20">Dezvoltatori</a>
+                            <a href="#about" class="gradient-btn v2">Oferte</a>
                         </div>
                     </div>
                 </div>
@@ -152,98 +154,6 @@
                     </div>
                 </div>
             </div>
-            <!-- <div class="space-90"></div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div id="canvas-holder" style="width:40%">
-                        <canvas id="chart-area"></canvas>
-                    </div>
-                    <br>
-                    <div class="space-20"></div>
-                    <a class="gradient-btn v2 mr-20" id="randomizeData">Randomize Data</a>
-                    <a class="gradient-btn v2 mr-20" id="addDataset">Add Dataset</a>
-                    <a class="gradient-btn v2 mr-20" id="removeDataset">Remove Dataset</a>
-                </div>
-            </div> -->
-    <script>
-        var randomScalingFactor = function() {
-            return Math.round(Math.random() * 100);
-        };
-
-        var config = {
-            type: 'pie',
-            data: {
-                datasets: [{
-                    data: [
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                    ],
-                    backgroundColor: [
-                        window.chartColors.red,
-                        window.chartColors.orange,
-                        window.chartColors.yellow,
-                        window.chartColors.green,
-                        window.chartColors.blue,
-                    ],
-                    label: 'Dataset 1'
-                }],
-                labels: [
-                    'Red',
-                    'Orange',
-                    'Yellow',
-                    'Green',
-                    'Blue'
-                ]
-            },
-            options: {
-                responsive: true
-            }
-        };
-
-        window.onload = function() {
-            var ctx = document.getElementById('chart-area').getContext('2d');
-            window.myPie = new Chart(ctx, config);
-        };
-
-        document.getElementById('randomizeData').addEventListener('click', function() {
-            config.data.datasets.forEach(function(dataset) {
-                dataset.data = dataset.data.map(function() {
-                    return randomScalingFactor();
-                });
-            });
-
-            window.myPie.update();
-        });
-
-        var colorNames = Object.keys(window.chartColors);
-        document.getElementById('addDataset').addEventListener('click', function() {
-            var newDataset = {
-                backgroundColor: [],
-                data: [],
-                label: 'New dataset ' + config.data.datasets.length,
-            };
-
-            for (var index = 0; index < config.data.labels.length; ++index) {
-                newDataset.data.push(randomScalingFactor());
-
-                var colorName = colorNames[index % colorNames.length];
-                var newColor = window.chartColors[colorName];
-                newDataset.backgroundColor.push(newColor);
-            }
-
-            config.data.datasets.push(newDataset);
-            window.myPie.update();
-        });
-
-        document.getElementById('removeDataset').addEventListener('click', function() {
-            config.data.datasets.splice(0, 1);
-            window.myPie.update();
-        });
-    </script>
-        
         </div>
         <div class="space-90"></div>
     </div>
@@ -254,35 +164,35 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4">
-                    <a href="#" class="single-about">
+                    <a href="./autentificare.html" class="single-about">
                         <div class="single-about-img">
                             <img src="assets/img/about-icon-1.png" alt="">
                         </div>
                         <div class="single-about-text">
-                            <h4>Card Student Platinum</h4>
-                            <p>The recording starts with the patter of a summer squall. Later, a drifting tone like that of a not quite tuned in radio station rises and for a while drowns</p>
+                            <h4>Card Student Startup</h4>
+                            <p>Fii în pas cu moda și aciziționează ultimul model de card Student Startup. Nu rata oferta de RON 37</p>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4">
-                    <a href="#" class="single-about">
+                    <a href="./autentificare.html" class="single-about">
                         <div class="single-about-img">
                             <img src="assets/img/about-icon-2.png" alt="">
                         </div>
                         <div class="single-about-text">
-                            <h4>Card Student Gold</h4>
-                            <p>The recording starts with the patter of a summer squall. Later, a drifting tone like that of a not quite tuned in radio station rises and for a while drowns</p>
+                            <h4>Card Student Premium</h4>
+                            <p>Fii în pas cu moda și aciziționează ultimul model de card Student Premium. Nu rata oferta de RON 56</p>
                         </div>
                     </a>
                 </div>
                 <div class="col-lg-4">
-                    <a href="#" class="single-about">
+                    <a href="./autentificare.html" class="single-about">
                         <div class="single-about-img">
                             <img src="assets/img/about-icon-3.png" alt="">
                         </div>
                         <div class="single-about-text">
-                            <h4>Card Student Basic</h4>
-                            <p>The recording starts with the patter of a summer squall. Later, a drifting tone like that of a not quite tuned in radio station rises and for a while drowns</p>
+                            <h4>Card Student Pro</h4>
+                            <p>Fii în pas cu moda și aciziționează ultimul model de card Student Pro. Nu rata oferta de RON 99</p>
                         </div>
                     </a>
                 </div>
@@ -358,179 +268,6 @@
             </div>
             <div class="space-30"></div>
         </div>
-        <!--team area end-->
-
-        <!--faq area start-->
-        <!-- 
-        <div class="faq-area wow fadeInUp" id="faq">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 text-center">
-                    <div class="heading">
-                        <h5>faq</h5>
-                        <div class="space-10"></div>
-                        <h1>Frequently Asked Questions </h1>
-                    </div>
-                    <div class="space-60"></div>
-                </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 text-center">
-                        <div class="faq-list">
-                            <ul class="nav nav-pills" id="pills-tab">
-                                <li><a class="active" data-toggle="pill" href="#one">General Questions</a></li>
-                                <li><a data-toggle="pill" href="#two">ico</a></li>
-                                <li><a data-toggle="pill" href="#three">token</a></li>
-                                <li><a data-toggle="pill" href="#four">Cryptocurrency</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="space-50"></div>
-            </div>
-                <div class="tab-content" id="pills-tabContent">
-                    <div class="tab-pane fade show active" id="one">
-                        <div class="container-fluid">
-                            <div class="faq-carousel owl-carousel">
-                                <div class="single-faq">
-                                    <h4>Why I should invest in ICO ?</h4>
-                                    <div class="space-20"></div>
-                                    <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day.</p>
-                                    <div class="space-20"></div>
-                                    <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                                </div>
-                                <div class="single-faq">
-                                    <h4>The Risks of Investing in ICO ?</h4>
-                                    <div class="space-20"></div>
-                                    <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day.</p>
-                                    <div class="space-20"></div>
-                                    <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                                </div>
-                                <div class="single-faq">
-                                    <h4>How to Trade Cryptocurrencies ?</h4>
-                                    <div class="space-20"></div>
-                                    <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day</p>
-                                    <div class="space-20"></div>
-                                    <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                                </div>
-                                <div class="single-faq">
-                                    <h4>How to Trade Cryptocurrencies ?</h4>
-                                    <div class="space-20"></div>
-                                    <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day</p>
-                                    <div class="space-20"></div>
-                                    <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="two">
-                        <div class="container-fluid">
-                            <div class="faq-carousel owl-carousel">
-                                <div class="single-faq">
-                                    <h4>Why I should invest in ICO ?</h4>
-                                    <div class="space-20"></div>
-                                    <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day.</p>
-                                    <div class="space-20"></div>
-                                    <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                                </div>
-                                <div class="single-faq">
-                                    <h4>The Risks of Investing in ICO ?</h4>
-                                    <div class="space-20"></div>
-                                    <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day.</p>
-                                    <div class="space-20"></div>
-                                    <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                                </div>
-                                <div class="single-faq">
-                                    <h4>How to Trade Cryptocurrencies ?</h4>
-                                    <div class="space-20"></div>
-                                    <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day</p>
-                                    <div class="space-20"></div>
-                                    <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                                </div>
-                                <div class="single-faq">
-                                    <h4>How to Trade Cryptocurrencies ?</h4>
-                                    <div class="space-20"></div>
-                                    <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day</p>
-                                    <div class="space-20"></div>
-                                    <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="three">
-                        <div class="container-fluid">
-                            <div class="faq-carousel owl-carousel">
-                                <div class="single-faq">
-                                    <h4>Why I should invest in ICO ?</h4>
-                                    <div class="space-20"></div>
-                                    <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day.</p>
-                                    <div class="space-20"></div>
-                                    <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                                </div>
-                                <div class="single-faq">
-                                    <h4>The Risks of Investing in ICO ?</h4>
-                                    <div class="space-20"></div>
-                                    <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day.</p>
-                                    <div class="space-20"></div>
-                                    <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                                </div>
-                                <div class="single-faq">
-                                    <h4>How to Trade Cryptocurrencies ?</h4>
-                                    <div class="space-20"></div>
-                                    <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day</p>
-                                    <div class="space-20"></div>
-                                    <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                                </div>
-                                <div class="single-faq">
-                                    <h4>How to Trade Cryptocurrencies ?</h4>
-                                    <div class="space-20"></div>
-                                    <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day</p>
-                                    <div class="space-20"></div>
-                                    <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="four">
-                        <div class="container-fluid">
-                            <div class="faq-carousel owl-carousel">
-                                <div class="single-faq">
-                                    <h4>Why I should invest in ICO ?</h4>
-                                    <div class="space-20"></div>
-                                    <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day.</p>
-                                    <div class="space-20"></div>
-                                    <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                                </div>
-                                <div class="single-faq">
-                                    <h4>The Risks of Investing in ICO ?</h4>
-                                    <div class="space-20"></div>
-                                    <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day.</p>
-                                    <div class="space-20"></div>
-                                    <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                                </div>
-                                <div class="single-faq">
-                                    <h4>How to Trade Cryptocurrencies ?</h4>
-                                    <div class="space-20"></div>
-                                    <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day</p>
-                                    <div class="space-20"></div>
-                                    <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                                </div>
-                                <div class="single-faq">
-                                    <h4>How to Trade Cryptocurrencies ?</h4>
-                                    <div class="space-20"></div>
-                                    <p>Swimming hundreds of feet beneath the ocean’s surface in many parts of the world are prolific architects called giant larvaceans. These zooplankton are not particularly giant themselves (they resemble tadpoles and are about the size of a pinkie finger), but every day</p>
-                                    <div class="space-20"></div>
-                                    <a href="#" class="readmore-btn"><i class="fa fa-angle-right"></i>readmore</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            <div class="space-90"></div>
-        </div> -->
-        <!--faq area end-->
-    </div>
-    <!--team bg area end-->
 
     <!--community area start-->
     <div class="community-area wow fadeInUp section-padding" id="contact">
@@ -597,7 +334,7 @@
                 <div class="col-12 col-sm-6 col-lg-4">
                     <div class="single-footer">
                         <div class="logo-area footer">
-                            <a href="#"><img src="assets/img/logo-top.png" alt=""></a>
+                            <a href="#"><img src="assets/img/logo_3.png" alt=""></a>
                         </div>
                         <div class="space-20"></div>
                         <p>Acest proiect este realizat pentru materia PSBD(Programarea sistemelor de baze de date) în cadrul facultății de Automatică și calculatoare Iași. </p>
@@ -612,27 +349,20 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             </div>
         </div>
     </div>
-    <script>
-        function cerere(){
-            var xhttp = new XMLHttpRequest();
-            let id = document.getElementById("in_data").value;
-            let url = `https://apex.oracle.com/pls/apex/psbd_ac4/hr/employees/${id}`;
-
-            xhttp.open("GET", url, true);
-            xhttp.send();
-            xhttp.onreadystatechange = function() {
-              if (this.readyState == 4 && this.status == 200) {
-                let jsonData = JSON.parse(this.responseText);
-                let nume = jsonData.ename;
-                let slujba = jsonData.job;
-                let manager = jsonData.mgr;
-                let salar = jsonData.sal;
-                document.getElementById("displayData_n").innerHTML = nume;
-                document.getElementById("displayData_sl").innerHTML = slujba;
-                document.getElementById("displayData_m").innerHTML = manager;
-                document.getElementById("displayData_s").innerHTML = salar;
-              }
-            };
+    <script type="text/javascript">
+        document.getElementById("autentificare").onclick = function() {log_back()};
+        function info(){
+            if(sessionStorage.getItem("lastname")){
+                document.getElementById("autentificare").innerHTML="<i class='far fa-user'></i> "+sessionStorage.getItem("lastname");
+            }
+        }
+        function log_back(){
+            if(sessionStorage.getItem("lastname")){
+                window.location.href='./Cont_curent.html';
+            }
+            else{
+                window.location.href='./autentificare.html';
+            }
         }
     </script>
     <!-- jquery 2.2.4 js-->
@@ -644,7 +374,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
     <!-- wow js-->
     <script src="assets/js/wow.min.js"></script>
     <!-- bootstrap js-->
-    <script src="assets/js/bootstrap.min.js"></script>\
+    <script src="assets/js/bootstrap.min.js"></script>
     <!--skroller js-->
     <script src="assets/js/skrollr.min.js"></script>
     <!--mobile menu js-->

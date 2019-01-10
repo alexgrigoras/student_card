@@ -33,7 +33,7 @@
     <script src="./Pie Chart/Chart.bundle.js"></script>
     <script src="./Pie Chart/utils.js"></script>
   </head>
-  <body onload="basic();dateCard();getTranz()">
+  <body onload="basic();dateCard();getTranz();getEcono();dateStud()">
     <!--header area start-->
     <div class="header-area wow fadeInDown header-absolate" id="nav" data-0="position:fixed;" data-top-top="position:fixed;top:0;" data-edge-strategy="set">
         <div class="container">
@@ -43,24 +43,17 @@
                 </div>
                 <div class="col-4 col-lg-2">
                     <div class="logo-area">
-                        <a href="#"><img src="assets/img/logo_3.png" alt=""></a>
+                        <a href="./index.html"><img src="assets/img/logo_3.png" alt=""></a>
                     </div>
                 </div>
                 <div class="col-4 col-lg-7 d-none d-lg-block">
                     <div class="main-menu text-center">
                         <nav>
                             <ul id="slick-nav">
-                                <li><a class="scroll" href="./index3.html">Acasă</a></li>
-                                <li><a class="scroll" href="#cont">Cont</a></li>
-                                <li><a class="scroll" href="#plati_transf">Plăți & transferuri</a></li>
-                                <li><a class="scroll" href="#profil">Profil & setări</a></li>
-                                <li><a class="scroll" href="#roadmap">Ajutor</a>
-                                    <ul>
-                                        <li><a href="index.html">FAQs</a></li>
-                                        <li><a href="index2.html">Instrucțiuni</a></li>
-                                        <li><a href="blog.html">Contactează-ne</a></li>
-                                    </ul>
-                                </li>
+                                <li><a class="scroll" href="./index.html">Acasă</a></li>
+                                <li><a class="scroll" href="./Cont_curent.html">Cont</a></li>
+                                <li><a class="scroll" href="./modificare2.html">Profil & setări</a></li>
+                                   
                             </ul>
                         </nav>
                     </div>
@@ -88,13 +81,13 @@
                     <div class="row text-center">
                         <div class="col-md-12 ftco-animate">
                             <p>Economii</p>
-                            <h2 style="color:#D6FFBD;">LEI 54.67</h2>
+                            <h2 style="color:#D6FFBD;" id="eco">-</h2>
                         </div>
                     </div>
                     <div class="row text-center">
                         <div class="col-md-12 ftco-animate">
                             <p>Cheltuit</p>
-                            <h2 style="color:#FFBDD8;">LEI 144.67</h2>
+                            <h2 style="color:#FFBDD8;" id="chelt">-</h2>
                         </div>
                     </div>
                 </div>
@@ -115,8 +108,13 @@
                     </div>
                     <div class="row ">
                         <div class="col-md-12 text-center">
-                            Stare<br>
+                            Stare Acțiune<br>
                             <h3 id="stare_test">0</h3>
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-12 text-center">Card<br>
+                            <h3 id="nr_tranz">-</h3>
                         </div>
                     </div>
                 </div>
@@ -127,7 +125,16 @@
         <div class="space-60"></div>
             <div class="row">
                 <div class="col-md-6">
-                    <div id="tranzactii" class="text-center"></div>
+                  <div class="row">
+                     <div class="col-md-6">
+                        <span id="more"></span>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <span id="first"></span>
+                    </div>
+                  </div>
+                     <div class="space-10"></div>
+                    <div id="tranzactii" class="text-left"></div>
                 </div>
                 <div class="col-md-6">
                     <div class="row ">
@@ -203,7 +210,7 @@
                                         </div>
                                      </div>
                                      <div class="col-md-6 text-center">
-                                        <div id="c_laptop">
+                                        <div id="v_laptop">
                                             <h2><i class="fas fa-laptop"></i></h2>
                                             <p>Laptop <br>RON <strong id="v_laptop_pret">3280</strong></p>
                                         </div>
@@ -269,6 +276,42 @@
                             
                          </div>
                     </div>
+                    <div class="space-10"></div>
+                    <div id="adaugcard"></div>
+                     <div class="card_bg">
+                         <div class="row ">
+                          <div class="col-md-12 text-center">
+                           <form name="myForm">          
+                              <div class="about-mid-text">
+                                  <h1>Creează un card</h1>
+                              </div>
+                              <p><input type="text" ng-model="id" placeholder="ID" name="id" id="id_stud" readonly></p>
+                              <select name="cars" ng-model="tip_card" id="tip_card">
+                                <option value="VISA">VISA</option>
+                                <option value="MASTERCARD">MASTERCARD</option>
+                                <option value="MAESTRO" selected>MAESTRO</option>
+                                <option value="GENERIC">GENERIC</option>
+                              </select>
+                              <div class="space-10"></div>
+                              <a href="#" class="gradient-btn v2 about-btn" id="trimite"> <i class="fa fa-credit-card"></i> Creează</a>
+                              <div class="space-10"></div>
+                              <div style="color: rgba(255,255,255,0.6);" id="displayData"></div>
+                              </form>
+                         </div>
+                       </div>
+                    </div>
+                    <div class="space-10"></div>
+                      <div class="card_bg">
+                        <div class="row ">
+                          <div class="col-md-12 text-center">
+                            <div class="space-10"></div>
+                            <a href="#" class="gradient-btn v2 about-btn" id="sterge"> <i class="fa fa-credit-card"></i> Șterge card</a>
+                            <div class="space-10"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -288,7 +331,7 @@
               <div class="block-7">
                 <div class="text-center">
                 <h2 class="heading">Gratis</h2>
-                <span class="price">$ <span class="number">0</span></span>
+                <span class="price">RON <span class="number">0</span></span>
                 <span class="excerpt d-block">100% gratis</span><br>
                 <a href="#" class="gradient-btn d-block px-2 py-3 mb-4">Înscrie-te</a>
                 
@@ -307,7 +350,7 @@
               <div class="block-7">
                 <div class="text-center">
                 <h2 class="heading">Startup</h2>
-                <span class="price">$ <span class="number">19</span></span>
+                <span class="price">RON <span class="number">37</span></span>
                 <span class="excerpt d-block">Membru Bronz</span><br>
                 <a href="#" class="gradient-btn d-block px-3 py-3 mb-4">Înscrie-te</a>
                 
@@ -326,7 +369,7 @@
               <div class="block-7">
                 <div class="text-center">
                 <h2 class="heading">Premium</h2>
-                <span class="price">$ <span class="number">49</span></span>
+                <span class="price">RON <span class="number">56</span></span>
                 <span class="excerpt d-block">Membru Silver</span><br>
                 <a href="#" class="gradient-btn d-block px-3 py-3 mb-4">Înscrie-te</a>
                 
@@ -345,7 +388,7 @@
               <div class="block-7">
                 <div class="text-center">
                 <h2 class="heading">Pro</h2>
-                <span class="price"><sup>$</sup> <span class="number">99</span></span>
+                <span class="price"><sup>RON</sup> <span class="number">99</span></span>
                 <span class="excerpt d-block">Membru Gold</span><br>
                 <a href="#" class="gradient-btn d-block px-3 py-3 mb-4">Înscrie-te</a>
                 
@@ -392,6 +435,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <script>
         document.getElementById("iesi").onclick = function() {iesi()};
         document.getElementById("utilizator").innerHTML="<i class='far fa-user'></i> "+sessionStorage.getItem("lastname");
+        document.getElementById("trimite").onclick = function() {trimite()};
+        document.getElementById("sterge").onclick = function() {delCard()};
         
         function basic(){
             document.getElementById("stare_test").innerHTML=sessionStorage.getItem("lastname");
@@ -399,6 +444,24 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         }
         function iesi(){
             window.location.href='./autentificare.html';
+            sessionStorage.removeItem('lastname');
+        }
+        function dateStud() {
+            var xhttp = new XMLHttpRequest();
+            let nume = sessionStorage.getItem("lastname");
+            let url = `https://apex.oracle.com/pls/apex/psbd_ac4/psbd/student/nume/${nume}`;
+
+            xhttp.open("GET", url, true);
+            xhttp.send();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+              //let jsonData = JSON.parse(this.response);
+              let data = this.response;
+              var obj = JSON.parse(data);
+                document.getElementById("id_student").innerHTML =  obj.items[0].id_student;
+                document.getElementById("id_stud").setAttribute("placeholder",obj.items[0].id_student);
+              }
+            }
         }
         function dateCard() {
             var xhttp = new XMLHttpRequest();
@@ -414,11 +477,14 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 var obj = JSON.parse(data);
                 document.getElementById("suma").innerHTML = obj.items[0].suma;
                 document.getElementById("numar").innerHTML =  obj.items[0].numar_card;
-                document.getElementById("id_student").innerHTML =  obj.items[0].id_student;
+                //document.getElementById("id_student").innerHTML =  obj.items[0].id_student;
+                document.getElementById("nr_tranz").innerHTML =  obj.items[0].tip_card;
+               // document.getElementById("id_stud").setAttribute("placeholder",obj.items[0].id_student);
               }
             }
         }
         function getTranz() {
+            
             var xhttp = new XMLHttpRequest();
             let nume = sessionStorage.getItem("lastname");
             let url = `https://apex.oracle.com/pls/apex/psbd_ac4/psbd/tranzactie/${nume}`;
@@ -430,8 +496,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                 let data = this.response;
                 var obj = JSON.parse(data);
                 let t="";
-                if(obj.hasMore==true)
-                {
+                
+                
                     for (i = 0; i < obj.count; i++) {
                         if(obj.items[i].tip_tranzactie=="V"){
                             t=t+"<div class='row'><div class='col-md-1'><h3 style='color:#D6FFBD;'>"+obj.items[i].tip_tranzactie+"</h3></div><div class='col-md-7'><strong>Locație: "+obj.items[i].id_locatie+"</strong><br/>nr: "+obj.items[i].numar_tranzactie+" | "+obj.items[i].data+"</div><div class='col-md-4 text-right'>RON <strong style='color:#D6FFBD;font-size:30px;'>"+obj.items[i].valoare+"</strong></div></div><hr style='border-color: rgba(90,83,152,0.5);margin:5px;'>";
@@ -443,26 +509,149 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                             t=t+"<div class='row'><div class='col-md-1'><h3 style='color:#FFEFA1;'>"+obj.items[i].tip_tranzactie+"</h3></div><div class='col-md-7'><strong>Locație: "+obj.items[i].id_locatie+"</strong><br/>nr: "+obj.items[i].numar_tranzactie+" | "+obj.items[i].data+"</div><div class='col-md-4 text-right'>RON <strong style='color:#FFEFA1;font-size:30px;'>"+obj.items[i].valoare+"</strong></div></div><hr style='border-color: rgba(90,83,152,0.5);margin:5px;'>";
                         }
                     }
-                    
-                    t=t+"<h1><i class='fas fa-caret-down'></i></h1>";
+                    if(url!=obj.links[2].href){
+                    document.getElementById("first").innerHTML="<i class='fas fa-caret-left' style='font-size:20px;'></i> <span style='color:rgba(255,255,255,0.6);'>Prima pagină</span>";
+                  }
+                  else{
+                    document.getElementById("first").innerHTML="";
+                  }
+
+                    if(obj.hasMore==true){
+
+                      document.getElementById("more").innerHTML="<i class='fas fa-caret-down' style='font-size:20px;'></i> <span style='color:rgba(255,255,255,0.6);'>Următoarea pagină</span>";
+                      document.getElementById("more").onclick = function() {inner(obj)};
+                      document.getElementById("first").onclick = function() {inner2(obj)};
+                      function inner(o){
+                        url =  o.links[3].href;
+                        xhttp.open("GET", url, true);
+                        xhttp.send();    
+                          }
+                      function inner2(o){
+                        url =  o.links[2].href;
+                        xhttp.open("GET", url, true);
+                        xhttp.send();    
+                          }
+                          
+                        }
+                    if(obj.hasMore==false){
+                              document.getElementById("more").innerHTML="";
+                            }
                     document.getElementById("tranzactii").innerHTML = t;
-                }
+
+                
               }
             }
            }
-        document.getElementById("c_meniu").onclick = function() {postTranz0();dateCard();getTranz();};
-        document.getElementById("c_analize").onclick = function() {postTranz1();dateCard();getTranz();};
-        document.getElementById("c_autobuz").onclick = function() {postTranz2();dateCard();getTranz();};
-        document.getElementById("c_tshirt").onclick = function() {postTranz3();dateCard();getTranz();};
+           function delCard(){
+
+            var xhttp = new XMLHttpRequest();
+            let nume = "ionelul";
+            let url = `https://apex.oracle.com/pls/apex/psbd_ac4/psbd/card/`;
+
+            xhttp.open("DELETE", url, true);
+            let nume = sessionStorage.getItem("lastname");
+            xhttp.send('{"nume":"' + nume + '"}');
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+              //let jsonData = JSON.parse(this.response);
+              let data = this.response;
+              document.getElementById("displayData").innerHTML = data;
+              }
+            }
+           }
+           function trimite() {
+            let url = `https://apex.oracle.com/pls/apex/psbd_ac4/psbd/card/`;
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", url, true);
+
+            xhr.setRequestHeader("Content-Type", "application/json"); //Send the proper header information along with the request
+
+            xhr.onreadystatechange = function() { // Call a function when the state changes.
+              if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                document.getElementById("displayData").innerHTML = "Creaat cu succes";
+              }
+              else if (this.readyState === XMLHttpRequest.DONE && this.status === 555) {
+                document.getElementById("displayData").innerHTML = "Userul nu există";
+              }   
+              else if (this.readyState === XMLHttpRequest.DONE && this.status === 550) {
+                document.getElementById("displayData").innerHTML = "Aveți deja card";
+              }       
+              else if (this.readyState === XMLHttpRequest.DONE && this.status === 400) {
+                document.getElementById("displayData").innerHTML = "Alte erori";
+              }
+            }
+            let id_student = document.getElementById("id_stud").getAttribute("placeholder");
+            let cvv = Math.floor(Math.random()*(999-100+1)+100);
+            let data_expirarii = "01.02.2020";
+            let tip_card = document.getElementById("tip_card").value;
+            let suma = "100";
+            let numar_card = Math.floor(Math.random()*1E16);
+            let body = '{"id_student":' + '"' + id_student + '"' + 
+                  ',"cvv":' + '"' + cvv + '"' + 
+                  ',"data_expirarii":' + '"' + data_expirarii + '"' +
+                  ',"tip_card":' + '"' + tip_card + '"' +
+                  ',"suma":' + '"' + suma + '"' +
+                  ',"numar_card":' + '"' + numar_card + '"' +
+                  '}';
+            console.log(body);
+            xhr.send(body); 
+        }
+           function getEcono() {
+            let sumv=0;
+            let sumc=0;
+            let echo=0;
+            let chelt=0;
+            var xhttp = new XMLHttpRequest();
+            let nume = sessionStorage.getItem("lastname");
+            let url = `https://apex.oracle.com/pls/apex/psbd_ac4/psbd/tranzactie/${nume}`;
+            xhttp.open("GET", url, true);
+            xhttp.send();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                //let jsonData = JSON.parse(this.response);
+                let data = this.response;
+                var obj = JSON.parse(data);
+                let t="";
+                
+                for (i = 0; i < obj.count; i++) {
+                    if(obj.items[i].tip_tranzactie=="V"){
+                         sumv=sumv+obj.items[i].valoare;
+                    }
+                    else{
+                        sumc=sumc+obj.items[i].valoare;
+                    }
+                }
+                eco=sumv-sumc;
+                document.getElementById("eco").innerHTML =  eco;
+                document.getElementById("chelt").innerHTML =  sumc;
+               
+                    if(obj.hasMore==true){
+
+                     
+                      function inner(o){
+                        url =  o.links[3].href;
+                        xhttp.open("GET", url, true);
+                        xhttp.send();    
+                          }
+                        inner(obj);
+                          
+                        }
+              }
+            }
+           }
+        document.getElementById("c_meniu").onclick = function() {postTranz0();dateCard();getTranz();getEcono();dateStud()};
+        document.getElementById("c_analize").onclick = function() {postTranz1();dateCard();getTranz();getEcono();dateStud()};
+        document.getElementById("c_autobuz").onclick = function() {postTranz2();dateCard();getTranz();getEcono();dateStud()};
+        document.getElementById("c_tshirt").onclick = function() {postTranz3();dateCard();getTranz();getEcono();dateStud()};
         
-        document.getElementById("v_mobil").onclick = function() {postTranz4();dateCard();getTranz();};
-        document.getElementById("v_couch").onclick = function() {postTranz5();dateCard();getTranz();};
-        document.getElementById("v_car").onclick = function() {postTranz6();dateCard();getTranz();};
-        document.getElementById("v_laptop").onclick = function() {postTranz7();dateCard();getTranz();};
+        document.getElementById("v_mobil").onclick = function() {postTranz4();dateCard();getTranz();getEcono();dateStud()};
+        document.getElementById("v_couch").onclick = function() {postTranz5();dateCard();getTranz();getEcono();dateStud()};
+        document.getElementById("v_car").onclick = function() {postTranz6();dateCard();getTranz();getEcono();dateStud()};
+        document.getElementById("v_laptop").onclick = function() {postTranz7();dateCard();getTranz();getEcono();dateStud()};
         
-        document.getElementById("a_sala").onclick = function() {postTranz8();dateCard();getTranz();};
-        document.getElementById("a_transport").onclick = function() {postTranz9();dateCard();getTranz();};
-        document.getElementById("a_biblioteca").onclick = function() {postTranz10();dateCard();getTranz();};       
+        document.getElementById("a_sala").onclick = function() {postTranz8();dateCard();getTranz();getEcono();dateStud()};
+        document.getElementById("a_transport").onclick = function() {postTranz9();dateCard();getTranz();getEcono();dateStud()};
+        document.getElementById("a_biblioteca").onclick = function() {postTranz10();dateCard();getTranz();getEcono();dateStud()};       
         
         function postTranz0(){
             let url = `https://apex.oracle.com/pls/apex/psbd_ac4/psbd/tranzactie/`;
@@ -502,7 +691,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             let tip_tranz = "C";
             let data_tranz = today;
             let val_tranz = document.getElementById("c_meniu_pret").textContent;
-            let id_stud = "1005";
+            let id_stud =  document.getElementById("id_stud").getAttribute("placeholder");
             let id_loc = "1";
             let body = '{"tip_tranz":' + '"' + tip_tranz + '"' + 
                         ',"data_tranz":' + '"' + data_tranz + '"' +
@@ -552,7 +741,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             let tip_tranz = "C";
             let data_tranz = today;
             let val_tranz = document.getElementById("c_analize_pret").textContent;
-            let id_stud = "1005";
+            let id_stud = document.getElementById("id_stud").getAttribute("placeholder");
             let id_loc = "2";
             let body = '{"tip_tranz":' + '"' + tip_tranz + '"' + 
                         ',"data_tranz":' + '"' + data_tranz + '"' +
@@ -560,7 +749,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                         ',"id_stud":' + '"' + id_stud + '"' +
                         ',"id_loc":' + '"' + id_loc + '"' +
                         '}';
-            document.getElementById("stare_test").innerHTML=1;
+            document.getElementById("stare_test").innerHTML=2;
             console.log(body);
             xhr.send(body); 
         }
@@ -602,7 +791,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             let tip_tranz = "C";
             let data_tranz = today;
             let val_tranz = document.getElementById("c_autobuz_pret").textContent;
-            let id_stud = "1005";
+            let id_stud = document.getElementById("id_stud").getAttribute("placeholder");
             let id_loc = "3";
             let body = '{"tip_tranz":' + '"' + tip_tranz + '"' + 
                         ',"data_tranz":' + '"' + data_tranz + '"' +
@@ -610,7 +799,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                         ',"id_stud":' + '"' + id_stud + '"' +
                         ',"id_loc":' + '"' + id_loc + '"' +
                         '}';
-            document.getElementById("stare_test").innerHTML=1;
+            document.getElementById("stare_test").innerHTML=3;
             console.log(body);
             xhr.send(body); 
         }
@@ -652,7 +841,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             let tip_tranz = "C";
             let data_tranz = today;
             let val_tranz = document.getElementById("c_tshirt_pret").textContent;
-            let id_stud = "1005";
+            let id_stud = document.getElementById("id_stud").getAttribute("placeholder");
             let id_loc = "4";
             let body = '{"tip_tranz":' + '"' + tip_tranz + '"' + 
                         ',"data_tranz":' + '"' + data_tranz + '"' +
@@ -660,7 +849,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                         ',"id_stud":' + '"' + id_stud + '"' +
                         ',"id_loc":' + '"' + id_loc + '"' +
                         '}';
-            document.getElementById("stare_test").innerHTML=1;
+            document.getElementById("stare_test").innerHTML=4;
             console.log(body);
             xhr.send(body); 
         }
@@ -702,7 +891,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             let tip_tranz = "V";
             let data_tranz = today;
             let val_tranz = document.getElementById("v_mobil_pret").textContent;
-            let id_stud = "1005";
+            let id_stud = document.getElementById("id_stud").getAttribute("placeholder");
             let id_loc = "5";
             let body = '{"tip_tranz":' + '"' + tip_tranz + '"' + 
                         ',"data_tranz":' + '"' + data_tranz + '"' +
@@ -710,7 +899,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                         ',"id_stud":' + '"' + id_stud + '"' +
                         ',"id_loc":' + '"' + id_loc + '"' +
                         '}';
-            document.getElementById("stare_test").innerHTML=1;
+            document.getElementById("stare_test").innerHTML=5;
             console.log(body);
             xhr.send(body); 
         }
@@ -752,7 +941,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             let tip_tranz = "V";
             let data_tranz = today;
             let val_tranz = document.getElementById("v_couch_pret").textContent;
-            let id_stud = "1005";
+            let id_stud = document.getElementById("id_stud").getAttribute("placeholder");
             let id_loc = "6";
             let body = '{"tip_tranz":' + '"' + tip_tranz + '"' + 
                         ',"data_tranz":' + '"' + data_tranz + '"' +
@@ -760,7 +949,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                         ',"id_stud":' + '"' + id_stud + '"' +
                         ',"id_loc":' + '"' + id_loc + '"' +
                         '}';
-            document.getElementById("stare_test").innerHTML=1;
+            document.getElementById("stare_test").innerHTML=6;
             console.log(body);
             xhr.send(body); 
         }
@@ -802,7 +991,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             let tip_tranz = "V";
             let data_tranz = today;
             let val_tranz = document.getElementById("v_car_pret").textContent;
-            let id_stud = "1005";
+            let id_stud = document.getElementById("id_stud").getAttribute("placeholder");
             let id_loc = "7";
             let body = '{"tip_tranz":' + '"' + tip_tranz + '"' + 
                         ',"data_tranz":' + '"' + data_tranz + '"' +
@@ -810,7 +999,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                         ',"id_stud":' + '"' + id_stud + '"' +
                         ',"id_loc":' + '"' + id_loc + '"' +
                         '}';
-            document.getElementById("stare_test").innerHTML=1;
+            document.getElementById("stare_test").innerHTML=7;
             console.log(body);
             xhr.send(body); 
         }
@@ -852,7 +1041,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             let tip_tranz = "V";
             let data_tranz = today;
             let val_tranz = document.getElementById("v_laptop_pret").textContent;
-            let id_stud = "1005";
+            let id_stud = document.getElementById("id_stud").getAttribute("placeholder");
             let id_loc = "8";
             let body = '{"tip_tranz":' + '"' + tip_tranz + '"' + 
                         ',"data_tranz":' + '"' + data_tranz + '"' +
@@ -860,12 +1049,12 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                         ',"id_stud":' + '"' + id_stud + '"' +
                         ',"id_loc":' + '"' + id_loc + '"' +
                         '}';
-            document.getElementById("stare_test").innerHTML=3;
+            document.getElementById("stare_test").innerHTML=8;
             console.log(body);
             xhr.send(body); 
         }
         function postTranz8(){
-            document.getElementById("stare_test").innerHTML=2;
+            
             let url = `https://apex.oracle.com/pls/apex/psbd_ac4/psbd/tranzactie/`;
             var xhr = new XMLHttpRequest();
             xhr.open("POST", url, true);
@@ -903,7 +1092,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             let tip_tranz = "A";
             let data_tranz = today;
             let val_tranz = document.getElementById("a_sala_pret").textContent;
-            let id_stud = "1005";
+            let id_stud = document.getElementById("id_stud").getAttribute("placeholder");
             let id_loc = "9";
             let body = '{"tip_tranz":' + '"' + tip_tranz + '"' + 
                         ',"data_tranz":' + '"' + data_tranz + '"' +
@@ -911,7 +1100,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                         ',"id_stud":' + '"' + id_stud + '"' +
                         ',"id_loc":' + '"' + id_loc + '"' +
                         '}';
-            
+            document.getElementById("stare_test").innerHTML=9;
             console.log(body);
             xhr.send(body); 
         }
@@ -953,7 +1142,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             let tip_tranz = "A";
             let data_tranz = today;
             let val_tranz = document.getElementById("a_transport_pret").textContent;
-            let id_stud = "1005";
+            let id_stud = document.getElementById("id_stud").getAttribute("placeholder");
             let id_loc = "10";
             let body = '{"tip_tranz":' + '"' + tip_tranz + '"' + 
                         ',"data_tranz":' + '"' + data_tranz + '"' +
@@ -961,7 +1150,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                         ',"id_stud":' + '"' + id_stud + '"' +
                         ',"id_loc":' + '"' + id_loc + '"' +
                         '}';
-            document.getElementById("stare_test").innerHTML=1;
+            document.getElementById("stare_test").innerHTML=10;
             console.log(body);
             xhr.send(body); 
         }
@@ -1003,7 +1192,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
             let tip_tranz = "A";
             let data_tranz = today;
             let val_tranz = document.getElementById("a_biblioteca_pret").textContent;
-            let id_stud = "1005";
+            let id_stud = document.getElementById("id_stud").getAttribute("placeholder");
             let id_loc = "11";
             let body = '{"tip_tranz":' + '"' + tip_tranz + '"' + 
                         ',"data_tranz":' + '"' + data_tranz + '"' +
@@ -1011,7 +1200,7 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
                         ',"id_stud":' + '"' + id_stud + '"' +
                         ',"id_loc":' + '"' + id_loc + '"' +
                         '}';
-            document.getElementById("stare_test").innerHTML=1;
+            document.getElementById("stare_test").innerHTML=11;
             console.log(body);
             xhr.send(body); 
         }

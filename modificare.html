@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Autentificare</title>
+    <title>Inregistrare</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -59,30 +59,32 @@
 
     <!--welcome area start-->
     <div class="welcome-area wow fadeInUp" id="home">
-        <div class="space-40"></div>
         <div class="row">
-                <div class="col-12 col-md-6">
-                    <div class="about-mid-img">
-                        <img src="assets/img/about-left.png" alt="">
-                    </div>
-                </div>
-                <div class=" chestionar col-12 col-md-6 align-self-center" ng-app="">
-                <form name="myForm">
-                    <div class="about-mid-text">
-                        <h1>Bună {{name}}! </h1>
-                    </div>
-                    <p><input type="text" ng-model="name" placeholder="User" name="name" id="nume" required><span ng-show="myForm.name.$touched && myForm.name.$invalid"> numele este obligatoriu.</span></p>
-                    <p><input type="password" ng-model="surname" placeholder="Parolă" name="surname" id="parola" required><span ng-show="myForm.surname.$touched && myForm.surname.$invalid"> parola este obligatorie.</span></p>
-                    <a href="./modificare.html" class="mr-20"> * Mi-am uitat parola</a>
-                    <div class="space-20"></div>
-                    <a href="#" class="gradient-btn v1 about-btn mr-20" id="intra">Autentifică-te</a><br>
-                    <div class="space-20"></div>
-                    <a href="inregistrare.html" class="mr-20"> Nu ai cont?</a>
-                    <div id="displayData"></div>
-                </form>
+            <div class="col-12 col-md-4">
+                <div class="about-mid-img">
+                    <img src="assets/img/man1.png" alt="">
                 </div>
             </div>
-             <div class="space-60"></div>
+            <div class=" chestionar col-12 col-md-7 align-self-center" ng-app="">
+                <form name="myForm">          
+                    <div class="about-mid-text">
+                        <h1>Îl vom modifica pe {{name}} </h1>
+                    </div>
+                    <p><input type="text" ng-model="id" placeholder="ID" name="id" id="id_stud" required><span ng-show="myForm.name.$touched && myForm.name.$invalid"> ID obligatoriu.</span></p>
+
+                    <p><input type="text" ng-model="name" placeholder="Nume" name="name" id="nume" required><span ng-show="myForm.name.$touched && myForm.name.$invalid"> Numele este obligatoriu.</span></p>
+                    <p><input type="text" ng-model="uni" placeholder="Universitate" name="" id="univ"  required><span ng-show="myForm.surname.$touched && myForm.surname.$invalid"> Universitatea este obligatorie.</span></p>
+                    <p><input type="text" ng-model="facultate" placeholder="Facultate" name="" id="fac"  required><span ng-show="myForm.surname.$touched && myForm.surname.$invalid"> Facultatea este obligatorie.</span></p>
+                    <p><input type="text" ng-model="tel" placeholder="Telefon" name="" id="tel"  required><span ng-show="myForm.surname.$touched && myForm.surname.$invalid"> Telefonul este obligatoriu.</span></p>
+                    <p><input type="text" ng-model="email" placeholder="Email" name="" id="email"  required><span ng-show="myForm.surname.$touched && myForm.surname.$invalid"> Emailul este obligatoriu.</span></p>
+                    <p><input type="password" placeholder="Parola" id="parola"   required><span ng-show="myForm.surname.$touched && myForm.surname.$invalid"> Parola este obligatorie.</span></p>
+                    <div class="space-10"></div>
+                    <a href="#" class="gradient-btn v2 about-btn" id="trimite"> <i class="fa fa-send-o"></i> Trimite</a>
+                    <div id="displayData"></div>
+                    <div class="space-90"></div>
+                </form>
+            </div>
+        </div>
     </div>
     <!--welcome area end-->
 
@@ -119,52 +121,61 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
         </div>
     </div>
     <script>
-        
-        document.getElementById("intra").onclick = function() {myFunction()};
+        document.getElementById("trimite").onclick = function() {myFunction()};
         function myFunction() {
+           
+            let url = `https://apex.oracle.com/pls/apex/psbd_ac4/psbd/student/`;
+            var xhr = new XMLHttpRequest();
+            xhr.open("PUT", url, true);
 
-        let nume = document.getElementById("nume").value;
-        let parola = document.getElementById("parola").value;
-        // let nume = 'florin';
-        // let parola = 'florin551';
-        let url = `https://apex.oracle.com/pls/apex/psbd_ac4/psbd/student/login/?nume=${nume}&parola=${parola}`;
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", url, true);
+            xhr.setRequestHeader("Content-Type", "application/json");   //Send the proper header information along with the request
 
-        xhr.setRequestHeader("Content-Type", "application/json");   //Send the proper header information along with the request
-
-        xhr.onreadystatechange = function() { // Call a function when the state changes.
-            if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-                let jsonData = JSON.parse(this.response);
-                let autentificare = jsonData.autentificare;
-                let motiv = jsonData.motiv;
-                if(autentificare=="corect"){
-                    if (typeof(Storage) !== "undefined") {
-                      // Store
-                      sessionStorage.setItem("lastname", nume);
-                      // Retrieve
-                      //document.getElementById("s").innerHTML = localStorage.getItem("lastname");
-                } 
-                document.getElementById("displayData").innerHTML = "Autentificare: " + autentificare + " - motiv: " + motiv;
-                window.location.href='./Cont_curent.html';}
-                
+            xhr.onreadystatechange = function() { // Call a function when the state changes.
+                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+                    document.getElementById("displayData").innerHTML = "Success POST";
+                }
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 555) {
+                    document.getElementById("displayData").innerHTML = "User alredy exists";
+                }           
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 550) {
+                    document.getElementById("displayData").innerHTML = "Data is not correct";
+                }
+                else if (this.readyState === XMLHttpRequest.DONE && this.status === 400) {
+                    document.getElementById("displayData").innerHTML = "Other error";
+                }
             }
-        }
+            let id_stud = document.getElementById("id_stud").value;
+            let nume = document.getElementById("nume").value;
+            let nume_univ = document.getElementById("univ").value;
+            let nume_fac = document.getElementById("fac").value;
+            let telefon = document.getElementById("tel").value;
+            let email = document.getElementById("email").value;
+            let parola = document.getElementById("parola").value;
+            let body = '{"nume":' + '"' + nume + '"' + 
+                    ',"id_stud":' + '"' + id_stud + '"' + 
+                    ',"n_universitate":' + '"' + nume_univ + '"' + 
+                    ',"n_facultate":' + '"' + nume_fac + '"' +
+                    ',"telefon":' + '"' + telefon + '"' +
+                    ',"email":' + '"' + email + '"' +
+                    ',"parola":' + '"' + parola + '"' +
+                    '}';
+            document.getElementById("displayData").innerHTML=body;
+            console.log(body);
+            xhr.send(body); 
 
-        xhr.send(); 
-    }
+        }
         
     </script>
     <!-- jquery 2.2.4 js-->
     <script src="assets/js/jquery-2.2.4.min.js"></script>
     <!-- popper js-->
-    <script src="assets/js/popper.js"></script>
+    <!-- <script src="assets/js/popper.js"></script> -->
     <!-- carousel js-->
     <script src="assets/js/owl.carousel.min.js"></script>
     <!-- wow js-->
     <script src="assets/js/wow.min.js"></script>
     <!-- bootstrap js-->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>\
     <!--skroller js-->
     <script src="assets/js/skrollr.min.js"></script>
     <!--mobile menu js-->
