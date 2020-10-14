@@ -1,22 +1,22 @@
-# Card_studentesc
+# Student Card System
 
----
+## Description
+Online payment system for students.
 
-## Descriere
-
-Sistem de plati online pentru studenti
-
----
-
-## Componente
-
+## Components
 1. Site web:
-	* HTML / CSS
+	* HTML/CSS
 	* Javascript
 1. Oracle APEX:
-	* Baza de date
-	* Servicii REST pentru accesare
-	* Tutorial REST (optional)
-1. Proiectare baza de date:
+	* Database
+	* Communication using REST
+1. Database development:
 	* Oracle Data Modeler
 	* Entity relationship
+	
+## Authors
+* Alexandru Grigoras
+* Ioan Suflet
+
+## License
+The application is licensed under the MIT License.
