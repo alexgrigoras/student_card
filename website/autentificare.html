@@ -125,8 +125,6 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 
         let nume = document.getElementById("nume").value;
         let parola = document.getElementById("parola").value;
-        // let nume = 'florin';
-        // let parola = 'florin551';
         let url = `https://apex.oracle.com/pls/apex/psbd_ac4/psbd/student/login/?nume=${nume}&parola=${parola}`;
         var xhr = new XMLHttpRequest();
         xhr.open("GET", url, true);
