@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8CB18E1D-DDB2-BD90-5999-EDB4E5F44D53" name="FACULTATE">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>D28950D9-AA42-DD95-0BEA-47E6DB1C3810</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_facultate" id="2D88EEA8-A922-8731-E492-5CB22D127EC8">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>A2421FF1-B545-9708-6C5D-4320216A2B16</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nume_facultate" id="F58EACF8-183F-7003-A320-AEFC35E0C6C1">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>71B69513-1C4D-E38D-B579-1C88A9065632</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_universitate" id="15B3E8D0-D18A-0636-B293-920BB1809174">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>5F3DD4AD-2B66-A7B6-CCB1-B5F4BD646291</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9C10D5D5-0AAD-B80F-5975-6B2D86436A5F" referredColumn="4CAB4167-1D3A-4F1C-2FE3-BC4DA1EA9CA7"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FFCA4051-D641-769F-5729-176D9EAB606B" name="facultate_id_facultate_PK">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>D8E3C03E-861B-32B7-82BC-779EC04609A3</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2D88EEA8-A922-8731-E492-5CB22D127EC8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F378E65E-5249-7777-A503-FD40B6E62588" name="universitate_facultate_FK">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>4404C6F7-E8F1-7915-BC99-229C4B85640B</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="15B3E8D0-D18A-0636-B293-920BB1809174"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

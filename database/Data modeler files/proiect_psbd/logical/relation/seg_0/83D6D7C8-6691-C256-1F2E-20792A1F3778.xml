@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="student_tranzactie_FK" directorySegmentName="seg_0" id="83D6D7C8-6691-C256-1F2E-20792A1F3778">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-10-27 19:30:14 UTC</createdTime>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<engineerTo>
+<item key="513F4B4B-78CC-FB3F-D3C0-CC3C6F8335D2" value="true"/>
+</engineerTo>
+<sourcePk>04628BA4-E81C-65C0-C696-AA05054C3A7E</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>face</nameOnSource>
+<nameOnTarget>este facuta</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>DA828117-4147-FA73-6D08-21B9C1AA02CC</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>89332685-4B10-AA78-7B22-936DAEAD55A3</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

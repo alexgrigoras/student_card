@@ -1,0 +1,106 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A785C11D-A3AE-28C5-F6CF-85B13DC56F86" name="LOCATIE">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-10-27 19:13:06 UTC</createdTime>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<engineerTo>
+<item key="513F4B4B-78CC-FB3F-D3C0-CC3C6F8335D2" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_locatie" id="0E6B99BE-29D4-490C-53A5-259193093D3B">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-10-27 19:26:34 UTC</createdTime>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<engineerTo>
+<item key="513F4B4B-78CC-FB3F-D3C0-CC3C6F8335D2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="denumire_locatie" id="D4CC43E4-1BB6-AD6F-FD47-C0AD27644925">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-10-27 19:26:37 UTC</createdTime>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<engineerTo>
+<item key="513F4B4B-78CC-FB3F-D3C0-CC3C6F8335D2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="adresa" id="17B9B32C-A29E-D6C3-A6A5-5106B4011900">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-10-28 19:10:35 UTC</createdTime>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<engineerTo>
+<item key="513F4B4B-78CC-FB3F-D3C0-CC3C6F8335D2" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150</dataTypeSize>
+<ownDataTypeParameters>150,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="telefon" id="959B918E-549F-96BA-7FD4-72A89B3BF460">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-10-28 19:10:42 UTC</createdTime>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<engineerTo>
+<item key="513F4B4B-78CC-FB3F-D3C0-CC3C6F8335D2" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="comision" id="ED2E6F04-B3AA-A1EC-29A9-D22C10D2F7B2">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-10-28 19:11:31 UTC</createdTime>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<engineerTo>
+<item key="513F4B4B-78CC-FB3F-D3C0-CC3C6F8335D2" value="true"/>
+</engineerTo>
+<constraintName>locatie_comision_CK</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="comision &gt;= 0"/>
+</checkConstraint>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="B4E1B5AD-3272-B956-0A27-828695E1E582" name="unitate_id_unitate_PK">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-10-27 19:47:14 UTC</createdTime>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<engineerTo>
+<item key="513F4B4B-78CC-FB3F-D3C0-CC3C6F8335D2" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>0E6B99BE-29D4-490C-53A5-259193093D3B</newElementsIDs>
+<usedAttributes>
+<attributeRef>0E6B99BE-29D4-490C-53A5-259193093D3B</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

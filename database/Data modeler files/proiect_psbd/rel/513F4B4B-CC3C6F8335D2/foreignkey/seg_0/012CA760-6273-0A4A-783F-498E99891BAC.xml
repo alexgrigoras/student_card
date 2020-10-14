@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="012CA760-6273-0A4A-783F-498E99891BAC" containerWithKeyObject="956D1E02-3474-8F8D-FF9E-EC1FDC259B15" localFKIndex="FEEC8555-5DCC-0F98-C5FA-A0EF78764173" name="locatie_tranzactie_FK">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>7657E2A1-AE80-0F3C-B5AB-EB08052EDC7C</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<referredTableLongName>LOCATIE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>E2094EB7-EB1D-1A8E-18BB-0AE0D7BF4F26</referredTableID>
+<keyObject>C311DFD7-25F0-500B-0501-EC2ADD8F3C5A</keyObject>
+<referredKeyID>C311DFD7-25F0-500B-0501-EC2ADD8F3C5A</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_locatie</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

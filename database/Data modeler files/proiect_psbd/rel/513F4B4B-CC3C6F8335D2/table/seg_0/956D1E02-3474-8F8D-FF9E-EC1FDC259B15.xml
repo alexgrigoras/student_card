@@ -1,0 +1,139 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="956D1E02-3474-8F8D-FF9E-EC1FDC259B15" name="TRANZACTIE">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>89332685-4B10-AA78-7B22-936DAEAD55A3</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="numar_tranzactie" id="C711DA37-0AAD-2379-E264-13A9AC149DA4">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>C175B8D7-114C-7C3C-E6DF-049F99184C3A</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tip_tranzactie" id="BD5A5066-25F8-05B9-D604-FE5915EE3235">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>BA8ACAE8-DCE6-D350-C2D3-2743BCB858FB</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<constraintName>tranzactie_tip_tranzactie_CK</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1</dataTypeSize>
+<listOfValues>
+<valueDef value="A" description="Abonament"/>
+<valueDef value="C" description="Cumparare"/>
+<valueDef value="V" description="Vanzare"/>
+</listOfValues>
+<ownDataTypeParameters>1,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="data" id="BD4A5EB8-CDD4-4287-2E8C-5C8ECE5366E9">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>91C7032B-53C4-4B4F-7914-B741178AE1A4</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="valoare" id="CFF0B37A-E07C-CA38-798B-37A1C50B5453">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>885D69F6-B184-D539-B798-A7659869B77D</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<constraintName>tranzactie_valoare_CK</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="valoare &gt; 0"/>
+</checkConstraint>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_student" id="8FA18EE5-02B3-E7DA-3AF9-E1CD4699E523">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>2EDE3A0C-4A75-1614-4034-4824BDB10ADE</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="94A4F752-B334-6DA5-5B6F-0E9409DA21A0" referredColumn="6DC001E0-3139-2B58-F112-86570C90234A"/>
+</associations>
+</Column>
+<Column name="id_locatie" id="DC915847-B9EB-59B4-871D-25030E20EA1F">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>13C8C434-AB01-6A2D-3911-928431F077AA</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="012CA760-6273-0A4A-783F-498E99891BAC" referredColumn="EA8CFF4F-6829-D58B-53C6-D1952887CA79"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3CA49002-34D6-EF93-6117-4CD54608234A" name="Tranzactie_numar_tranzactie_UK">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>633E134E-24B0-EC65-0431-7A9ECB353AF4</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C711DA37-0AAD-2379-E264-13A9AC149DA4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="FEEC8555-5DCC-0F98-C5FA-A0EF78764173" name="locatie_tranzactie_FK">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>7657E2A1-AE80-0F3C-B5AB-EB08052EDC7C</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DC915847-B9EB-59B4-871D-25030E20EA1F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="73656608-F764-5525-9267-E4CC072008F6" name="student_tranzactie_FK">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>83D6D7C8-6691-C256-1F2E-20792A1F3778</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8FA18EE5-02B3-E7DA-3AF9-E1CD4699E523"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

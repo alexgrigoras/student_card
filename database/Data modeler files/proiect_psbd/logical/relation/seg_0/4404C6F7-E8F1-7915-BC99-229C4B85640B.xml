@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="universitate_facultate_FK" directorySegmentName="seg_0" id="4404C6F7-E8F1-7915-BC99-229C4B85640B">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-10-27 19:35:33 UTC</createdTime>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<engineerTo>
+<item key="513F4B4B-78CC-FB3F-D3C0-CC3C6F8335D2" value="true"/>
+</engineerTo>
+<sourcePk>D8E3C03E-861B-32B7-82BC-779EC04609A3</sourcePk>
+<targetPk>AC14CB1D-F8ED-24ED-1DCB-6388360F7D5C</targetPk>
+<identifying>false</identifying>
+<nameOnSource>are</nameOnSource>
+<nameOnTarget>apartine</nameOnTarget>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>D28950D9-AA42-DD95-0BEA-47E6DB1C3810</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>9B9FBB75-0ABD-5DA7-F111-3604500A58AE</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

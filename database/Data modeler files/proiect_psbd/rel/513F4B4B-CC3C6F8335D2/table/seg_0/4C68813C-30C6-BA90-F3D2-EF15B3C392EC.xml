@@ -1,0 +1,146 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="4C68813C-30C6-BA90-F3D2-EF15B3C392EC" name="STUDENT">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>DA828117-4147-FA73-6D08-21B9C1AA02CC</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_student" id="6DC001E0-3139-2B58-F112-86570C90234A">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>5A335952-A4E6-D003-B8BE-FE242A808833</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nume_stud" id="2008280A-B2DE-3FB8-98A4-CC407EC75978">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>5E066DFC-EF7C-932F-BC47-C631A98786A8</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="telefon" id="ABFE98FB-DFFC-47DE-9DD2-9018DB60B51B">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>63B24C01-DAC2-0F03-4DA4-98BA222963E5</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="email" id="012CD1C7-E666-959F-3611-FF3AC68770CC">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>FCA5D3E9-B543-2FC9-1A5F-8405644F666B</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<constraintName>student_email_CK</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="REGEXP_LIKE (email, &apos;^\w+(\.\w+)*+@\w+(\.\w+)+$&apos;)"/>
+</checkConstraint>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="id_facultate" id="7DDC5110-4761-B458-569C-3F76E4E58E71">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>1DE8D212-BC6C-B133-6DE4-14CF32E4E1BF</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F502B47B-8561-D825-CE42-5A8C91931650" referredColumn="2D88EEA8-A922-8731-E492-5CB22D127EC8"/>
+</associations>
+</Column>
+<Column name="parola" id="A5488798-6AD3-18CB-CC87-4C7ACE3A36A6">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-30 11:56:49 UTC</createdTime>
+<generatorID>C996343F-3FAE-1E30-990A-76484CAE055B</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="DATALENGTH(parola) &gt;=4"/>
+</checkConstraint>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="95D151B4-112F-3B88-D684-787324D82EAC" name="student_id_student_PK">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>04628BA4-E81C-65C0-C696-AA05054C3A7E</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6DC001E0-3139-2B58-F112-86570C90234A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DF6E6D43-138D-6F2D-F7EC-8048890219EB" name="student_telefon_UK">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>FB0D8CE6-9B15-5F78-E739-9027D58FFE09</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="ABFE98FB-DFFC-47DE-9DD2-9018DB60B51B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="55EAE47B-8F45-AA34-B7BE-5FEC9D7E7EE1" name="student_email_UK">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>9C8989CC-C7DB-3A19-2481-B57B86FC7711</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="012CD1C7-E666-959F-3611-FF3AC68770CC"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C17186A9-8F4C-24C1-0CC6-5CEE1F6FE735" name="facultate_student_FK">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>F269280C-F7F0-F572-AF53-67FDEB621048</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7DDC5110-4761-B458-569C-3F76E4E58E71"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

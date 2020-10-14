@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="locatie_tranzactie_FK" directorySegmentName="seg_0" id="7657E2A1-AE80-0F3C-B5AB-EB08052EDC7C">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-10-27 19:33:35 UTC</createdTime>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<engineerTo>
+<item key="513F4B4B-78CC-FB3F-D3C0-CC3C6F8335D2" value="true"/>
+</engineerTo>
+<sourcePk>633E134E-24B0-EC65-0431-7A9ECB353AF4</sourcePk>
+<targetPk>B4E1B5AD-3272-B956-0A27-828695E1E582</targetPk>
+<identifying>false</identifying>
+<nameOnSource>apartine</nameOnSource>
+<nameOnTarget>are</nameOnTarget>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>*</sourceCardinality>
+<sourceEntity>89332685-4B10-AA78-7B22-936DAEAD55A3</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>A785C11D-A3AE-28C5-F6CF-85B13DC56F86</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

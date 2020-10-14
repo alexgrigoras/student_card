@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="student_card_FK" directorySegmentName="seg_0" id="095EDC08-7A8F-C834-E567-0CD166763B4F">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-10-27 18:49:55 UTC</createdTime>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<engineerTo>
+<item key="513F4B4B-78CC-FB3F-D3C0-CC3C6F8335D2" value="true"/>
+</engineerTo>
+<sourcePk>04628BA4-E81C-65C0-C696-AA05054C3A7E</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>detine</nameOnSource>
+<nameOnTarget>apartine</nameOnTarget>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>DA828117-4147-FA73-6D08-21B9C1AA02CC</sourceEntity>
+<targetCardinalityString>1</targetCardinalityString>
+<targetEntity>05A485D2-588C-3A5E-4B77-E7F1622E602D</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

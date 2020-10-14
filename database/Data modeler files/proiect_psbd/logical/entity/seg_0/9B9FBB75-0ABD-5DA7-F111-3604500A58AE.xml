@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9B9FBB75-0ABD-5DA7-F111-3604500A58AE" name="UNIVERSITATE">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-10-27 19:21:50 UTC</createdTime>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<engineerTo>
+<item key="513F4B4B-78CC-FB3F-D3C0-CC3C6F8335D2" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_universitate" id="411AD8DC-DF26-59C3-E4AE-E0E7709F51BB">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-10-27 19:24:29 UTC</createdTime>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<engineerTo>
+<item key="513F4B4B-78CC-FB3F-D3C0-CC3C6F8335D2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nume_univ" id="CD4ED6A9-299F-3923-71F5-64240E918104">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-10-27 19:24:32 UTC</createdTime>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<engineerTo>
+<item key="513F4B4B-78CC-FB3F-D3C0-CC3C6F8335D2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="oras" id="E84F6759-AC7B-1D2D-C6B9-813DF8EC1B99">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-10-27 19:24:36 UTC</createdTime>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<engineerTo>
+<item key="513F4B4B-78CC-FB3F-D3C0-CC3C6F8335D2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="AC14CB1D-F8ED-24ED-1DCB-6388360F7D5C" name="universitate_id_univ_PK">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 09:11:15 UTC</createdTime>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<engineerTo>
+<item key="513F4B4B-78CC-FB3F-D3C0-CC3C6F8335D2" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>411AD8DC-DF26-59C3-E4AE-E0E7709F51BB</newElementsIDs>
+<usedAttributes>
+<attributeRef>411AD8DC-DF26-59C3-E4AE-E0E7709F51BB</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="BCD0273F-0FB9-708F-C2F8-24B260F93BD3" name="universitate_nume_univ_UK">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:06:28 UTC</createdTime>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<engineerTo>
+<item key="513F4B4B-78CC-FB3F-D3C0-CC3C6F8335D2" value="true"/>
+</engineerTo>
+<newElementsIDs>CD4ED6A9-299F-3923-71F5-64240E918104</newElementsIDs>
+<usedAttributes>
+<attributeRef>CD4ED6A9-299F-3923-71F5-64240E918104</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

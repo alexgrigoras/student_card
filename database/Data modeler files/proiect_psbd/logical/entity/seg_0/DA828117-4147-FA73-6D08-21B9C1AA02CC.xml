@@ -1,0 +1,147 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="DA828117-4147-FA73-6D08-21B9C1AA02CC" name="STUDENT">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-10-27 18:41:38 UTC</createdTime>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<engineerTo>
+<item key="513F4B4B-78CC-FB3F-D3C0-CC3C6F8335D2" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_student" id="5A335952-A4E6-D003-B8BE-FE242A808833">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-10-27 18:42:10 UTC</createdTime>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<engineerTo>
+<item key="513F4B4B-78CC-FB3F-D3C0-CC3C6F8335D2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="nume_stud" id="5E066DFC-EF7C-932F-BC47-C631A98786A8">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-10-27 18:42:23 UTC</createdTime>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<engineerTo>
+<item key="513F4B4B-78CC-FB3F-D3C0-CC3C6F8335D2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="parola" id="C996343F-3FAE-1E30-990A-76484CAE055B">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-30 11:50:27 UTC</createdTime>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<engineerTo>
+<item key="513F4B4B-78CC-FB3F-D3C0-CC3C6F8335D2" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="DATALENGTH(parola) &gt;=4"/>
+</checkConstraint>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="telefon" id="63B24C01-DAC2-0F03-4DA4-98BA222963E5">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-10-27 19:52:03 UTC</createdTime>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<engineerTo>
+<item key="513F4B4B-78CC-FB3F-D3C0-CC3C6F8335D2" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="email" id="FCA5D3E9-B543-2FC9-1A5F-8405644F666B">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-10-27 19:51:49 UTC</createdTime>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<engineerTo>
+<item key="513F4B4B-78CC-FB3F-D3C0-CC3C6F8335D2" value="true"/>
+</engineerTo>
+<constraintName>student_email_CK</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="REGEXP_LIKE (email, &apos;^\w+(\.\w+)*+@\w+(\.\w+)+$&apos;)"/>
+</checkConstraint>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_facultate" id="1DE8D212-BC6C-B133-6DE4-14CF32E4E1BF">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-10-27 19:35:13 UTC</createdTime>
+<generatorID>F269280C-F7F0-F572-AF53-67FDEB621048</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<engineerTo>
+<item key="513F4B4B-78CC-FB3F-D3C0-CC3C6F8335D2" value="true"/>
+</engineerTo>
+<referedAttribute>A2421FF1-B545-9708-6C5D-4320216A2B16</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>2</dataTypePrecision>
+<ownDataTypeParameters>,2,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="04628BA4-E81C-65C0-C696-AA05054C3A7E" name="student_id_student_PK">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-10-27 18:42:38 UTC</createdTime>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<engineerTo>
+<item key="513F4B4B-78CC-FB3F-D3C0-CC3C6F8335D2" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<newElementsIDs>5A335952-A4E6-D003-B8BE-FE242A808833</newElementsIDs>
+<usedAttributes>
+<attributeRef>5A335952-A4E6-D003-B8BE-FE242A808833</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="FB0D8CE6-9B15-5F78-E739-9027D58FFE09" name="student_telefon_UK">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:01:51 UTC</createdTime>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<engineerTo>
+<item key="513F4B4B-78CC-FB3F-D3C0-CC3C6F8335D2" value="true"/>
+</engineerTo>
+<newElementsIDs>63B24C01-DAC2-0F03-4DA4-98BA222963E5</newElementsIDs>
+<usedAttributes>
+<attributeRef>63B24C01-DAC2-0F03-4DA4-98BA222963E5</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="9C8989CC-C7DB-3A19-2481-B57B86FC7711" name="student_email_UK">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:02:16 UTC</createdTime>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<engineerTo>
+<item key="513F4B4B-78CC-FB3F-D3C0-CC3C6F8335D2" value="true"/>
+</engineerTo>
+<newElementsIDs>FCA5D3E9-B543-2FC9-1A5F-8405644F666B</newElementsIDs>
+<usedAttributes>
+<attributeRef>FCA5D3E9-B543-2FC9-1A5F-8405644F666B</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

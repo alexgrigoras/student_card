@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="94A4F752-B334-6DA5-5B6F-0E9409DA21A0" containerWithKeyObject="956D1E02-3474-8F8D-FF9E-EC1FDC259B15" localFKIndex="73656608-F764-5525-9267-E4CC072008F6" name="student_tranzactie_FK">
+<createdBy>Alexandru Grigoras</createdBy>
+<createdTime>2018-11-02 11:12:18 UTC</createdTime>
+<generatorID>83D6D7C8-6691-C256-1F2E-20792A1F3778</generatorID>
+<ownerDesignName>proiect_psbd</ownerDesignName>
+<referredTableLongName>STUDENT</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>4C68813C-30C6-BA90-F3D2-EF15B3C392EC</referredTableID>
+<keyObject>95D151B4-112F-3B88-D684-787324D82EAC</keyObject>
+<referredKeyID>95D151B4-112F-3B88-D684-787324D82EAC</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>id_student</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
