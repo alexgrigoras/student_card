@@ -13,6 +13,9 @@ Online payment system for students.
 1. Database development:
 	* Oracle Data Modeler
 	* Entity relationship
+
+## Implementation
+See [Documentation](documentation.pdf) for mode details.
 	
 ## Authors
 * Alexandru Grigoras
